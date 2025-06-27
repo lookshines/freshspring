@@ -1,0 +1,278 @@
+
+/*
+Footer Area CSS
+=================================================================*/
+.footer-area {
+    .footer-weight {
+        position: relative;
+        .footer-logo {
+            margin-bottom: 15px;
+        }
+        .footer-logo2 {
+            display: none;
+        }
+        p {
+            max-width: 362px;
+            margin-bottom: 22px;
+        }
+        .footer-social {
+            padding: {
+                left: 0; right: 0;
+            };
+            margin-bottom: 0;
+            list-style-type: none;
+            li {
+                display: inline-block;
+                margin-right: 5px;
+                a {
+                    font-size: 16px;
+                    width: 35px;
+                    height: 35px;
+                    line-height: 38px;
+                    border-radius: 100%;
+                    text-align: center;
+                    background-color: #e0e5ea;
+                    color: rgba(95, 95, 95, 1);
+                    &:hover {
+                        background-color: var(--headingColor);
+                        color: var(--whiteColor);
+                    }
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        h3 {
+            font-size: 20px;
+            padding-bottom: 10px;
+            margin-bottom: 24px;
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 88px;
+                height: 2px;
+                background-color: var(--starColor);
+            }
+        }
+
+        .contact {
+            padding: {
+                left: 0; right: 0;
+            };
+            margin-bottom: 0;
+            list-style-type: none;
+            li {
+                position: relative;
+                padding-left: 25px;
+                margin-bottom: 20px;
+                i {
+                    position: absolute;
+                    top: 3px;
+                    left: 0;
+                    font-size: 18px;
+                    color: var(--headingColor);
+                }
+                a {
+                    color: var(--paragraphColor);
+                    &:hover {
+                        color: var(--headingColor);
+                    }
+                }
+                &.phone {
+                    a {
+                        font-weight: 700;
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .services {
+            padding: {
+                left: 0; right: 0;
+            };
+            margin-bottom: 0;
+            list-style-type: none;
+            li {
+                margin-bottom: 16px;
+                a {
+                    color: var(--paragraphColor);
+                    &:hover {
+                        color: var(--headingColor);
+                    }
+                }
+
+                span {
+                    display: block;
+                    font-weight: 600;
+                    margin-bottom: 5px;
+                }
+                sup {
+                    top: 0;
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &.footer-area-style-two {
+        .footer-weight {
+            p {
+                color: rgba(217, 217, 217, 1);
+            }
+            .footer-social {
+                li {
+                    a {
+                        background-color: rgba(25, 48, 78, 1);
+                        color: rgba(102, 160, 56, 1);
+                        &:hover {
+                            background-color: rgba(102, 160, 56, 1);
+                            color: var(--whiteColor);
+                        }
+                    }
+                }
+            }
+            h3 {
+                color: var(--whiteColor);
+                &::before {
+                    background-color: rgba(102, 160, 56, 1);
+                }
+            }
+
+            .contact {
+                li {
+                    i {
+                        color: rgba(255, 255, 255, 1);
+                    }
+                    a {
+                        color: rgba(217, 217, 217, 1);
+                    }
+                }
+            }
+
+            .services {
+                li {
+                    color: rgba(217, 217, 217, 1);
+                    a {
+                        color: rgba(217, 217, 217, 1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Min width 991px */
+@media only screen and (max-width: 767px) {
+
+    .footer-area {
+        .footer-weight {
+            margin-bottom: 25px;
+        }
+    }
+
+    //
+    .copy-area {
+        .copy {
+            text-align: center;
+            .copy-info {
+                text-align: center;
+                ul {
+                    li {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .footer-area {
+        .footer-weight {
+            margin-bottom: 25px;
+            p {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+            .services {
+                li {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .footer-area {
+        .footer-weight {
+            p {
+                font-size: 13px;
+            }
+            h3 {
+                font-size: 18px;
+            }
+            .contact {
+                li {
+                    i {
+                        top: 1px;
+                        font-size: 16px;
+                    }
+                    font-size: 13px;
+                }
+            }
+            .services {
+                li {
+                    font-size: 13px;
+                    sup {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+        &.footer-area-style-two {
+            .footer-weight {
+                .services {
+                    li {
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {}
+
+/* Min width 1600px to Max width 1799px */
+@media only screen and (min-width: 1600px) and (max-width: 1799px) {}

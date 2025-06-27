@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link Of CSS Fils -->
+    <link rel="stylesheet" href="{% static 'freshspring_app/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'freshspring_app/css/swiper-bundle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'freshspring_app/fonts/flaticon_mycollection.css' %}">
+    <link rel="stylesheet" href="{% static 'freshspring_app/css/boxicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'freshspring_app/css/scrollCue.css' %}">
+    <link rel="stylesheet" href="{% static 'freshspring_app/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'freshspring_app/css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'freshspring_app/css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'freshspring_app/css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'freshspring_app/css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'freshspring_app/css/dark.css' %}">
+
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{% static 'freshspring_app/images/favicon.svg' %}">
+</head>
+<body>
+    
+    {% include 'freshspring_app/header.html' %}
+    <div>
+        {% block content %}
+
+        {% endblock %}
+    </div>
+    
+<!-- Start Footer Area -->
+    <div class="footer-area pt-100 pb-75 bg-color-f0f6fd">
+        <div class="container">
+            <div class="row" data-cues="slideInUp" data-duration="900">
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer-weight">
+                        <a href="index.html" class="d-block">
+                            <img class="footer-logo" src="{% static 'freshspring_app/images/logo.svg' %}" alt="image">
+                            <img class="footer-logo2" src="{% static 'freshspring_app/images/white-logo.svg' %}" alt="image">
+                        </a>
+                        <p>Cleaning services are beneficial for those who may not have the time, equipment, or expertise to maintain cleanliness in their spaces.</p>
+                        <ul class="footer-social">
+                            <li>
+                                <a href="https://www.facebook.com/" target="_blank">
+                                    <i class="flaticon-facebook-1"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.twitter.com/" target="_blank">
+                                    <i class="flaticon-twitter-1"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/" target="_blank">
+                                    <i class="flaticon-linkedin-1"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/" target="_blank">
+                                    <i class="flaticon-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-6">
+                    <div class="footer-weight">
+                        <h3>Contact info</h3>
+                        <p>782 Hazelwood Avenue, San Francisco, USA</p>
+                        <ul class="contact">
+                            <li>
+                                <i class='bx bx-envelope'></i>
+                                <a href="mailto:info@torado.com">info@torado.com</a>
+                            </li>
+                            <li class="phone">
+                                <i class='bx bx-phone-call'></i>
+                                <a href="tel:14519534466">+1 (451) 953 4466</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-6">
+                    <div class="footer-weight">
+                        <h3>Quick links</h3>
+                        <ul class="services">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="testimonials.html">Testimonials</a></li>
+                            <li><a href="appointment.html">Appointment</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-6">
+                    <div class="footer-weight">
+                        <h3>Our services</h3>
+                        <ul class="services">
+                            <li><a href="services.html">Regular Cleaning</a></li>
+                            <li><a href="services.html">Deep Cleaning</a></li>
+                            <li><a href="services.html">Post-Event Cleaning</a></li>
+                            <li><a href="services.html">Commercial Cleaning</a></li>
+                            <li><a href="services.html">One-Time Cleaning</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-6">
+                    <div class="footer-weight">
+                        <h3>Office hours</h3>
+                        <ul class="services">
+                            <li><span>Monday - Friday:</span>9:30am – 8:00pm</li>
+                            <li><span>Saturday:</span>9:30am – 5:00pm</li>
+                            <li><sup>Sunday: </sup>Closed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer Area -->
+
+    <!-- Start Copy Area -->
+    <div class="copy-area bg-color-f0f6fd">
+        <div class="container">
+            <div class="copy">
+                <div class="row">
+                    <div class="col-lg-7 col-md-12">
+                        <p>Copyrights by <span>Torado</span> All Rights Reserved. Developed by <a href="https://envytheme.com/" target="_blank">EnvyTheme</a></p>
+                    </div>
+                    <div class="col-lg-5 col-md-12">
+                        <div class="copy-info">
+                            <ul>
+                                <li><a href="terms-conditions.html">Terms Of Service</a></li>
+                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Copy Area -->
+
+    <!-- Scroll Top Btn -->
+    <div class="top-button-icon">
+        <button id="scrollTopBtn">
+            <i class='bx bxs-up-arrow-alt'></i>
+        </button>
+    </div>
+    <!-- Scroll Top Btn -->
+
+    <!-- Link Of JS Fils -->
+    <script src="{% static 'freshspring_app/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'freshspring_app/js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'freshspring_app/js/scrollCue.min.js' %}"></script>
+    <script src="{% static 'freshspring_app/js/script.js' %}"></script>
+</body>
+</html>

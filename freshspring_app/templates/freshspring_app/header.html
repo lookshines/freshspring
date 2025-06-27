@@ -1,0 +1,498 @@
+{% load static %}
+<!-- preloader -->
+<div id="preloader">
+    <div id="container" class="container-preloader">
+        <div class="animation-preloader">
+            <div class="spinner"></div>
+            <div class="txt-loading">
+                <span preloader-text="T" class="characters">T</span>
+                
+                <span preloader-text="O" class="characters">O</span>
+                
+                <span preloader-text="R" class="characters">R</span>
+                
+                <span preloader-text="A" class="characters">A</span>
+                
+                <span preloader-text="D" class="characters">D</span>
+
+                <span preloader-text="O" class="characters">O</span>
+            </div>
+        </div>	
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+</div>
+<!-- preloader -->
+
+<!-- Dark/Light Toggle -->
+<div id="modeSwitcher">
+    <input type="checkbox" class="checkbox" id="chk" />
+    <label class="label" for="chk">
+        <i class="fas fa-moon"></i>
+        <div class="ball"></div>
+    </label>
+</div>
+<!-- End -->
+<div class="header-area-info">
+<!-- Start Top Header Area -->
+    <div class="top-header-area bg-color-004995">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12">
+                    <div class="top-header-content">
+                        <ul>
+                            <li>
+                                <img class="mail" src="{% static 'freshspring_app/images/svg/mail.svg' %}" alt="image">
+                                <a href="mailto:hello@torado.com">hello@torado.com</a>
+                            </li>
+                            <li>
+                                <img class="mail" src="{% static 'freshspring_app/images/svg/phone-call.svg' %}" alt="image">
+                                <span>Call for a Free Estimate: </span>
+                                <a href="tel:14519534466"> +1 (451) 953 4466</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="top-header-info">
+                        <div class="register">
+                            <ul class="login-r">
+                                <li>
+                                    <img class="clock" src="{% static 'freshspring_app/images/svg/clock.svg' %}" alt="image">
+                                    Monday - Saturday: 9:30am – 8:00pm (24/7)
+                                </li>
+                                <li>
+                                    <div class="login">
+                                        <img class="world-icon" src="{% static 'freshspring_app/images/svg/globe.svg' %}" alt="image">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>English</option>
+                                            <option value="1">Arabic</option>
+                                            <option value="2">Latin</option>
+                                            <option value="3">China</option>
+                                        </select>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Header Area -->
+    
+    <!-- Start Navbar Area -->
+    <nav class="navbar navbar-expand-lg" id="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="{% static 'freshspring_app/images/logo.svg' %}" class="navbar-logo" alt="logo">
+                <img src="{% static 'freshspring_app/images/white-logo.svg' %}" class="navbar-logo logo2" alt="logo">
+            </a>
+            <a class="navbar-toggler home1-one-toggler" data-bs-toggle="offcanvas" href="#navbarOffcanvas" role="button" aria-controls="navbarOffcanvas">
+                <span class="burger-menu">
+                    <span class="top-bar"></span>
+                    <span class="middle-bar"></span>
+                    <span class="bottom-bar"></span>
+                </span>
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link active">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a href="index.html" class="nav-link active">Home Demo One</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="index-2.html" class="nav-link">Home Demo Two</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="index-3.html" class="nav-link">Home Demo Three</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a href="services.html" class="nav-link">Our Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="service-details.html" class="nav-link">Services Details</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                            Portfolio
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="portfolio-details.html" class="nav-link">Portfolio Details</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                            Pages
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a href="about.html" class="nav-link">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pricing.html" class="nav-link">Pricing Plan</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="testimonials.html" class="nav-link">Testimonials</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="appointment.html" class="nav-link">Appointment</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="faq.html" class="nav-link">FAQs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="gallery.html" class="nav-link">Gallery</a>
+                            </li>
+
+                            <li class="nav-item ">
+                                <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                                    Team
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a href="team.html" class="nav-link">Our Team</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="team-details.html" class="nav-link">Team Details</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="login.html" class="nav-link">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="register.html" class="nav-link">Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="terms-conditions.html" class="nav-link">Terms & Conditions</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="not-found.html" class="nav-link">404 Error Page</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                            Shops
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a href="shop.html" class="nav-link">Shop</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="product-details.html" class="nav-link">Product Details</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="cart.html" class="nav-link">Cart</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="checkout.html" class="nav-link">Checkout</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                            Blog
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a href="blog.html" class="nav-link">Our Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="blog-details.html" class="nav-link">Blog Details</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="others-option d-flex align-items-center">
+                    <div class="option-item">
+                        <button class="search-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+                            <i class='bx bx-search'></i>
+                        </button>
+                    </div>
+                    <div class="option-item">
+                        <div class="shopping-bag">
+                            <a href="cart.html">
+                                <i class='bx bx-cart'></i>
+                                <span>Cart</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-item">
+                        <a href="contact.html" class="talk-btn"><i class='bx bx-message-rounded'></i> Let's Talk</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+<!-- End Navbar Area -->
+</div>
+
+<!-- Start Mobile Device Navbar Area -->
+<div class="responsive-navbar offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvas">
+    <div class="offcanvas-header">
+        <a href="index.html" class="logo d-inline-block">
+            <img src="assets/images/logo.svg" alt="logo">
+        </a>
+        <button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
+            <i class='bx bx-x'></i>
+        </button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="accordion" id="navbarAccordion">
+            <div class="accordion-item">
+                <button class="accordion-button collapsed active" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                    Home
+                </button>
+                <div id="collapseNine" class="accordion-collapse collapse" data-bs-parent="#navbarAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion" id="navbarAccordion2">
+                            <div class="accordion-item">
+                                <a href="index.html" class="accordion-link active">
+                                    Home Demo One 
+                                </a>
+                            </div>
+                            <div class="accordion-item">
+                                <a href="index-2.html" class="accordion-link">
+                                    Home Demo Two 
+                                </a>
+                            </div>
+                            <div class="accordion-item">
+                                <a href="index-3.html" class="accordion-link">
+                                    Home Demo Three
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBang" aria-expanded="false" aria-controls="collapseBang">
+                    Services  
+                </button>
+                <div id="collapseBang" class="accordion-collapse collapse" data-bs-parent="#navbarAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion" id="navbarAccordion24">
+                            <div class="accordion-item">
+                                <a href="services.html" class="accordion-link">Services</a>
+                            </div>
+                            <div class="accordion-item">
+                                <a href="service-details.html" class="accordion-link">Service Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Portfolio 
+                </button>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#navbarAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion" id="navbarAccordion26">
+                            <div class="accordion-item">
+                                <a href="portfolio.html" class="accordion-link">Portfolio</a>
+                            </div>
+                            <div class="accordion-item">
+                                <a href="portfolio-details.html" class="accordion-link">Portfolio Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Pages
+                </button>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#navbarAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion" id="navbarAccordion23">
+                            <div class="accordion-item">
+                                <a href="about.html" class="accordion-link">About Us</a>
+                            </div>
+                            <div class="accordion-item">
+                                <a href="pricing.html" class="accordion-link">Pricing Plan</a>
+                            </div>
+                            <div class="accordion-item">
+                                <a href="testimonials.html" class="accordion-link">Testimonials</a>
+                            </div>
+                            <div class="accordion-item">
+                                <a href="appointment.html" class="accordion-link">Appointment</a>
+                            </div>
+                            <div class="accordion-item">
+                                <a href="faq.html" class="accordion-link">FAQ</a>
+                            </div>
+                            <div class="accordion-item">
+                                <a href="gallery.html" class="accordion-link">Gallery</a>
+                            </div>
+                            <div class="accordion-item">
+                                <a href="login.html" class="accordion-link">Login</a>
+                            </div>
+                            <div class="accordion-item">
+                                <a href="register.html" class="accordion-link">Register</a>
+                            </div>
+
+                            <div class="accordion-item">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwenty" aria-expanded="false" aria-controls="collapseTwenty">
+                                    Team  
+                                </button>
+                                <div id="collapseTwenty" class="accordion-collapse collapse" data-bs-parent="#navbarAccordion">
+                                    <div class="accordion-body">
+                                        <div class="accordion" id="navbarAccordion44">
+                                            <div class="accordion-item">
+                                                <a href="team.html" class="accordion-link">Team</a>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <a href="team-details.html" class="accordion-link">Team Details</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <a href="terms-conditions.html" class="accordion-link">Terms & Conditions</a>
+                            </div>
+                            <div class="accordion-item">
+                                <a href="privacy-policy.html" class="accordion-link">Privacy & Policy</a>
+                            </div>
+                            <div class="accordion-item">
+                                <a href="not-found.html" class="accordion-link">404 Error Page</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            <div class="accordion-item">
+                <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Shops
+                </button>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#navbarAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion" id="navbarAccordion45">
+                            <div class="accordion-item">
+                                <a href="shop.html" class="accordion-link">Shop</a>
+                            </div>
+                            <div class="accordion-item">
+                                <a href="product-details.html" class="accordion-link">Product Details</a>
+                            </div>
+                            <div class="accordion-item">
+                                <a href="cart.html" class="accordion-link">Cart</a>
+                            </div>
+                            <div class="accordion-item">
+                                <a href="checkout.html" class="accordion-link">Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapseWilliam" aria-expanded="false" aria-controls="collapseWilliam">
+                    Blog
+                </button>
+                <div id="collapseWilliam" class="accordion-collapse collapse" data-bs-parent="#navbarAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion" id="navbarAccordion25">
+                            <div class="accordion-item">
+                                <a href="blog.html" class="accordion-link">Our Blog</a>
+                            </div>
+                            <div class="accordion-item">
+                                <a href="blog-details.html" class="accordion-link">Blog Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <a class="accordion-button without-icon" href="contact.html">
+                    Contact
+                </a>
+            </div>
+        </div>
+
+        <div class="others-option d-flex align-items-center">
+            <div class="option-item">
+                <button class="search-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+                    <i class='bx bx-search'></i>
+                </button>
+            </div>
+            <div class="option-item">
+                <div class="shopping-bag">
+                    <a href="cart.html">
+                        <i class='bx bx-cart'></i>
+                        <span>Cart</span>
+                    </a>
+                </div>
+            </div>
+            <div class="option-item">
+                <div class="option-item">
+                    <a href="contact.html" class="talk-btn"><i class='bx bx-message-rounded'></i> Let's Talk</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Mobile Device Navbar Area -->
+
+<!-- Search Bar Start -->
+<div class="search-can">
+    <div class="offcanvas offcanvas-top" id="offcanvasTop">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class='bx bx-x'></i>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <form class="search-form">
+                <input type="text" class="form-control" placeholder="Search...">
+                <button class="search-button" type="submit">
+                    <i class="bx bx-search"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Search Bar End -->
