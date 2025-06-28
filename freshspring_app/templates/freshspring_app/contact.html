@@ -1,0 +1,146 @@
+{% extends 'freshspring_app/base.html' %}
+{% load static %}
+
+{% block title %}Services{% endblock %}
+
+{% block content %}
+
+<!-- Start Page Banner Area -->
+<div class="page-banner-area">
+    <div class="container">
+        <div class="page-content">
+            <h2>Contact</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>Contact</li>
+            </ul>
+        </div>
+    </div>
+    <img class="page-banner-shape-1" src="{% static 'freshspring_app/images/shape/page-banner-shape-1.png' %}" alt="image">
+    <img class="page-banner-shape-2" src="{% static 'freshspring_app/images/shape/page-banner-shape-2.png' %}" alt="image">
+</div>
+<!-- End Page Banner Area -->
+
+<!-- Start Contact Us Area -->
+<div class="contact-area pt-100 pb-75">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">Contact Information</span>
+            <h2>Call, email or write to us whatever you need</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="phone-card">
+                    <div class="content">
+                        <img src="{% static 'freshspring_app/images/svg/map-pin.svg' %}" alt="image">
+                        <h3>Office Address</h3>
+                        <span>782 Hazelwood Avenue, San Francisco, USA</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="phone-card content-card">
+                    <div class="content">
+                        <img src="{% static 'freshspring_app/images/svg/phone.svg' %}" alt="image">
+                        <h3>Phone Number</h3>
+                        <a href="tel:14519534466">+1 (451) 953 4466</a>
+                        <a href="tel:14519537799">+1 (451) 953 7799</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="phone-card mail-card">
+                    <div class="content">
+                        <img src="assets/images/svg/mail3.svg" alt="image">
+                        <h3>Mail Address</h3>
+                        <a href="mailto:hello@torado.com">hello@torado.com</a>
+                        <a href="mailto:info@torado.com">info@torado.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Contact Us Area -->
+
+<!-- Start Contact Map Area -->
+<div class="contact-map-area pb-75">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="leave-reply">
+                    <form class="question-form">
+                        <h3>Send us your query here</h3>
+                        <div class="form-group">
+                            <i class='bx bx-user'></i>
+                            <input type="text" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <i class='bx bx-envelope'></i>
+                            <input type="text" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <i class='bx bx-phone-call'></i>
+                            <input type="text" class="form-control" placeholder="Phone">
+                        </div>
+                        <div class="form-group">
+                            <i class='bx bx-book-alt'></i>
+                            <input type="text" class="form-control" placeholder="Your subject">
+                        </div>
+                        <div class="form-group textarea">
+                            <i class='bx bx-edit-alt'></i>
+                            <textarea class="form-control" placeholder="Write your message"></textarea>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="flexCheckDefault" id="flexCheckDefault1">
+                            <label class="form-check-label" for="flexCheckDefault1">By checking this, you agree to our <a href="terms-conditions.html">Terms</a> and <a href="privacy-policy.html">Privacy policy</a></label>
+                        </div>
+
+                        <button type="submit" class="default-btn more">Send Message<i class="flaticon-right-arrow-3"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="map-area">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17851.20908927234!2d-122.47424884045056!3d37.72724125281285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7dc4c2625733%3A0xd1753b114d09b5de!2s782%20Hazelwood%20Ave%2C%20San%20Francisco%2C%20CA%2094127%2C%20USA!5e0!3m2!1sen!2sbd!4v1691386801878!5m2!1sen!2sbd"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Contact Map Area -->
+
+<!-- Start Sign Up To Our Newsletter Area -->
+<div class="newsletter-area newsletter-service">
+    <div class="container">
+        <div class="newsletter-bg bg-color-8cb1dc">
+            <div class="row g-0 align-items-center">
+                <div class="col-lg-7 col-md-7">
+                    <form class="newsletter-form">
+                        <h4>Signup to our newsletter</h4>
+                        <div class="form-group">
+                            <i class='bx bx-envelope'></i>
+                            <input type="text" class="form-control" placeholder="Enter your email address">
+                            <button type="submit" class="learn-more">Subscribe<i class="flaticon-right-arrow-3"></i></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-4 col-md-5">
+                    <div class="question-call d-flex align-items-center justify-content-end">
+                        <div class="icon">
+                            <i class='bx bx-phone-call'></i>
+                        </div>
+                        <div class="info">
+                            <span>Have a question?</span>
+                            <a href="tel:14519534466">+1 (451) 953 4466</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Sign Up To Our Newsletter Area -->
+
+{% endblock %}

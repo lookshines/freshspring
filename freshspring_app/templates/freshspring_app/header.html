@@ -98,142 +98,28 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a href="javascript:void(0)" class="dropdown-toggle nav-link active">
+                        <a href="{% url 'home' %}" class="nav-link active">
                             Home
                         </a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item">
-                                <a href="index.html" class="nav-link active">Home Demo One</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="index-2.html" class="nav-link">Home Demo Two</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="index-3.html" class="nav-link">Home Demo Three</a>
-                            </li>
-                        </ul>
                     </li>
 
                     <li class="nav-item ">
-                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
-                            Services
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item">
-                                <a href="services.html" class="nav-link">Our Services</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="service-details.html" class="nav-link">Services Details</a>
-                            </li>
-                        </ul>
-                    </li>
+                        <a href="{% url 'services' %}" class="nav-link">Our Services</a>
 
                     <li class="nav-item ">
-                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                        <a href="{% url 'portfolio' %}" class="nav-link">
                             Portfolio
                         </a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item">
-                                <a href="portfolio.html" class="nav-link">Portfolio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="portfolio-details.html" class="nav-link">Portfolio Details</a>
-                            </li>
-                        </ul>
                     </li>
 
                     <li class="nav-item">
-                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
-                            Pages
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item">
-                                <a href="about.html" class="nav-link">About Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pricing.html" class="nav-link">Pricing Plan</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="testimonials.html" class="nav-link">Testimonials</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="appointment.html" class="nav-link">Appointment</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="faq.html" class="nav-link">FAQs</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="gallery.html" class="nav-link">Gallery</a>
-                            </li>
-
-                            <li class="nav-item ">
-                                <a href="javascript:void(0)" class="dropdown-toggle nav-link">
-                                    Team
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a href="team.html" class="nav-link">Our Team</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="team-details.html" class="nav-link">Team Details</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="login.html" class="nav-link">Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="register.html" class="nav-link">Register</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="terms-conditions.html" class="nav-link">Terms & Conditions</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="not-found.html" class="nav-link">404 Error Page</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item ">
-                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
-                            Shops
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item">
-                                <a href="shop.html" class="nav-link">Shop</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="product-details.html" class="nav-link">Product Details</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="cart.html" class="nav-link">Cart</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="checkout.html" class="nav-link">Checkout</a>
-                            </li>
-                        </ul>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                        <a href="{% url 'blog' %}" class="nav-link">
                             Blog
                         </a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item">
-                                <a href="blog.html" class="nav-link">Our Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="blog-details.html" class="nav-link">Blog Details</a>
-                            </li>
-                        </ul>
                     </li>
 
                     <li class="nav-item">
-                        <a href="contact.html" class="nav-link">Contact</a>
+                        <a href="{% url 'contact' %}" class="nav-link">Contact</a>
                     </li>
                 </ul>
 

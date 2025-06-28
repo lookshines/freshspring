@@ -1,0 +1,10 @@
+services:
+  - type: web
+  name: my-django-app
+  env: python
+  plan: free
+  buildCommand: "pip install -r requirement.txt"
+  startCommand: "gunicorn freshspring_website.wsgi:application"
+  envVars:
+    - key: DJANGO_SETTING_MODULE
+      value: freshspring_website.settings
