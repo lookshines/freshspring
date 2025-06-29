@@ -1,0 +1,261 @@
+/*==========================================
+Top Header Area Style
+=============================*/
+.header-area-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.top-header-area {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.top-header-area .container-fluid {
+  max-width: 1630px;
+}
+.top-header-area .top-header-content ul {
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+.top-header-area .top-header-content ul li {
+  position: relative;
+  display: inline-block;
+  margin-right: 30px;
+  padding-left: 25px;
+  font-size: 14px;
+  color: var(--whiteColor);
+  line-height: 27.2px;
+  font-family: var(--bodyFontFamily);
+}
+.top-header-area .top-header-content ul li .mail {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  max-width: 16px;
+  color: var(--starColor);
+  transition: var(--transition);
+}
+.top-header-area .top-header-content ul li span {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: var(--headingFontFamily);
+}
+.top-header-area .top-header-content ul li a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--whiteColor);
+}
+.top-header-area .top-header-content ul li:hover a {
+  color: var(--starColor);
+}
+.top-header-area .top-header-content ul li:first-child .mail {
+  top: 7px;
+}
+.top-header-area .top-header-content ul li:first-child a {
+  font-weight: 400;
+}
+.top-header-area .top-header-content ul li:last-child {
+  margin-right: 0;
+}
+.top-header-area .top-header-info {
+  text-align: end;
+}
+.top-header-area .top-header-info .login-r {
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+.top-header-area .top-header-info .login-r li {
+  position: relative;
+  display: inline-block;
+  color: var(--whiteColor);
+  font-size: 14px;
+  padding-left: 25px;
+}
+.top-header-area .top-header-info .login-r li .clock {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  max-width: 16px;
+}
+.top-header-area .top-header-info .login-r li i {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  color: var(--whiteColor);
+  font-size: 14px;
+}
+.top-header-area .top-header-info .login-r li a {
+  position: relative;
+  color: var(--whiteColor);
+}
+.top-header-area .top-header-info .login-r li a:hover {
+  color: var(--mainColor);
+}
+.top-header-area .top-header-info .login-r li:first-child a {
+  padding-left: 0;
+}
+.top-header-area .top-header-info .login-r li:last-child {
+  margin-left: 0;
+  padding-left: 0;
+}
+.top-header-area .top-header-info .login-r li:last-child a {
+  margin-right: 0;
+}
+.top-header-area .top-header-info .login-r li:last-child a::before {
+  display: none;
+}
+.top-header-area .top-header-info .login {
+  position: relative;
+}
+.top-header-area .top-header-info .login .world-icon {
+  position: absolute;
+  top: 9px;
+  left: 0;
+  max-width: 16px;
+  color: var(--starColor);
+}
+.top-header-area .top-header-info .login select.form-select {
+  background-color: transparent;
+  color: var(--whiteColor);
+  border: none;
+  border-radius: 0;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--bodyFontFamily);
+  background-image: url("..//images/svg/down-arrow.svg");
+  background-position: right 0.5px center;
+  background-repeat: no-repeat;
+  background-size: 10px 12px;
+  padding-left: 25px;
+  padding-right: 22px;
+}
+.top-header-area .top-header-info .login select.form-select:focus {
+  border: 0;
+  box-shadow: unset;
+}
+.top-header-area .top-header-info .login select.form-select option {
+  color: var(--blackColor);
+  font-family: var(--bodyFontFamily);
+}
+
+/* Min width 991px */
+@media only screen and (max-width: 767px) {
+  .top-header-area .top-header-content ul li span {
+    font-size: 13px;
+  }
+  .top-header-area .top-header-content ul li a {
+    font-size: 13px;
+  }
+  .top-header-area .top-header-info {
+    text-align: start;
+  }
+  .top-header-area .top-header-info .login-r li {
+    font-size: 13px;
+    padding-left: 22px;
+  }
+  .top-header-area .top-header-info .login {
+    left: -22px;
+  }
+}
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .top-header-area .container-fluid {
+    max-width: 540px;
+  }
+}
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .top-header-area .top-header-content {
+    text-align: center;
+  }
+  .top-header-area .top-header-content ul li {
+    margin-right: 20px;
+    padding-left: 25px;
+    font-size: 14px;
+  }
+  .top-header-area .top-header-content ul li i {
+    top: -4px;
+    font-size: 14px;
+    width: 25px;
+    height: 25px;
+    line-height: 28px;
+  }
+  .top-header-area .top-header-content ul li span {
+    font-size: 14px;
+  }
+  .top-header-area .top-header-content ul li a {
+    font-size: 14px;
+  }
+  .top-header-area .top-header-content ul li *, .top-header-area .top-header-content ul li ::after, .top-header-area .top-header-content ul li ::before {
+    box-sizing: border-box;
+  }
+  .top-header-area .top-header-content ul li:first-child a {
+    margin-left: 5px;
+    font-size: 14px;
+  }
+  .top-header-area .top-header-info {
+    text-align: center;
+  }
+  .top-header-area .top-header-info .login-r li {
+    font-size: 14px;
+  }
+  .top-header-area .top-header-info .login-r li:last-child {
+    margin-left: 0;
+  }
+  .top-header-area .top-header-info .login select.form-select {
+    font-size: 14px;
+  }
+  .top-header-area .top-header-info .login select.form-select option {
+    font-size: 14px;
+  }
+}
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .top-header-area .container-fluid {
+    max-width: 960px;
+  }
+  .top-header-area .top-header-content ul li span {
+    font-size: 12px;
+  }
+  .top-header-area .top-header-content ul li a {
+    font-size: 12px;
+  }
+  .top-header-area .top-header-info .login-r li {
+    font-size: 12px;
+  }
+  .top-header-area .top-header-info .login-r li .clock {
+    top: 1px;
+  }
+  .top-header-area .top-header-info .login .world-icon {
+    top: 7px;
+  }
+  .top-header-area .top-header-info .login .form-select {
+    font-size: 12px;
+  }
+}
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .top-header-area .container-fluid {
+    max-width: 1140px;
+  }
+}
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {
+  .top-header-area .container-fluid {
+    max-width: 1320px;
+  }
+}
+/* Min width 1600px to Max width 1799px */
+@media only screen and (min-width: 1600px) and (max-width: 1799px) {
+  .top-header-area .container-fluid {
+    max-width: 1520px;
+  }
+}/*# sourceMappingURL=header.css.map */
