@@ -3,12 +3,13 @@
 :root {
   --headingFontFamily: "Montserrat", sans-serif;
   --bodyFontFamily: "Open Sans", sans-serif;
-  --paragraphColor: #5f5f5f;
-  --headingColor: #13287e;
-  --primaryColor: #004995;
-  --starColor: #fee026;
+  --paragraphColor: #444c4e;
+  --headingColor: #256279;
+  --primaryColor: #38993F;
+  --starColor: #ffc107;
   --whiteColor: #ffffff;
   --blackColor: #000000;
+  --anchorColor: #2e7f35;
   --transition: all ease 0.5s;
   --fontSize: 16px;
 }
@@ -55,7 +56,7 @@ p:last-child {
   color: var(--headingColor);
 }
 .h1 a:hover, .h2 a:hover, .h3 a:hover, .h4 a:hover, .h5 a:hover, .h6 a:hover, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
-  color: var(--dangerColor);
+  color: var(--anchorColor);
 }
 
 .d-table {
@@ -111,7 +112,7 @@ p:last-child {
 }
 
 .bg-color-004995 {
-  background-color: #004995;
+  background-color: #38993F;
 }
 
 .bg-color-f0f6fd {

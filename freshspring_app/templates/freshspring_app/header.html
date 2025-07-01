@@ -53,12 +53,12 @@
                         <ul>
                             <li>
                                 <img class="mail" src="{% static 'freshspring_app/images/svg/mail.svg' %}" alt="image">
-                                <a href="mailto:hello@torado.com">hello@torado.com</a>
+                                <a href="mailto:hello@torado.com">info@freshspringng.com</a>
                             </li>
                             <li>
                                 <img class="mail" src="{% static 'freshspring_app/images/svg/phone-call.svg' %}" alt="image">
-                                <span>Call for a Free Estimate: </span>
-                                <a href="tel:14519534466"> +1 (451) 953 4466</a>
+                                <span>Call for Consultation: </span>
+                                <a href="tel:2347068473658"> +234 (706) 847 3658</a>
                             </li>
                         </ul>
                     </div>
@@ -69,10 +69,10 @@
                             <ul class="login-r">
                                 <li>
                                     <img class="clock" src="{% static 'freshspring_app/images/svg/clock.svg' %}" alt="image">
-                                    Monday - Saturday: 9:30am – 8:00pm (24/7)
+                                    Monday - Saturday: 8:00am – 5:00pm
                                 </li>
                                 <li>
-                                    <div class="login">
+                                    <!--<div class="login">
                                         <img class="world-icon" src="{% static 'freshspring_app/images/svg/globe.svg' %}" alt="image">
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected>English</option>
@@ -80,7 +80,7 @@
                                             <option value="2">Latin</option>
                                             <option value="3">China</option>
                                         </select>
-                                    </div>
+                                    </div>-->
                                 </li>
                             </ul>
                         </div>
@@ -94,9 +94,9 @@
     <!-- Start Navbar Area -->
     <nav class="navbar navbar-expand-lg" id="navbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img src="{% static 'freshspring_app/images/logo.svg' %}" class="navbar-logo" alt="logo">
-                <img src="{% static 'freshspring_app/images/white-logo.svg' %}" class="navbar-logo logo2" alt="logo">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'freshspring_app/images/freshspring-logo.svg' %}" class="navbar-logo" alt="logo">
+                <!--<img src="{% static 'freshspring_app/images/freshspring-logo.svg' %}" class="navbar-logo logo2" alt="logo">-->
             </a>
             <a class="navbar-toggler home1-one-toggler" data-bs-toggle="offcanvas" href="#navbarOffcanvas" role="button" aria-controls="navbarOffcanvas">
                 <span class="burger-menu">
@@ -108,28 +108,28 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a href="{% url 'home' %}" class="nav-link active">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}" href="{% url 'home' %}">
                             Home
                         </a>
                     </li>
 
                     <li class="nav-item ">
-                        <a href="{% url 'services' %}" class="nav-link">Our Services</a>
+                        <a href="{% url 'services' %}" class="nav-link {% if request.resolver_match.url_name == 'services' %}active{% endif %}">Our Services</a>
 
                     <li class="nav-item ">
-                        <a href="{% url 'portfolio' %}" class="nav-link">
+                        <a href="{% url 'portfolio' %}" class="nav-link {% if request.resolver_match.url_name == 'portfolio' %}active{% endif %}">
                             Portfolio
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="{% url 'blog' %}" class="nav-link">
+                        <a href="{% url 'blog' %}" class="nav-link {% if request.resolver_match.url_name == 'blog' %}active{% endif %}">
                             Blog
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+                        <a href="{% url 'contact' %}" class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">Contact</a>
                     </li>
                 </ul>
 
@@ -139,17 +139,17 @@
                             <i class='bx bx-search'></i>
                         </button>
                     </div>
-                    <div class="option-item">
+                    <!--<div class="option-item">
                         <div class="shopping-bag">
                             <a href="cart.html">
                                 <i class='bx bx-cart'></i>
                                 <span>Cart</span>
                             </a>
                         </div>
-                    </div>
+                    </div>-->
                     <div class="option-item">
                         <div class="option-item">
-                        <a href="contact.html" class="talk-btn"><i class='bx bx-message-rounded'></i> Let's Talk</a>
+                        <a href="{% url 'contact' %}" class="talk-btn"><i class='bx bx-message-rounded'></i> Let's Talk</a>
                     </div>
                     </div>
                 </div>

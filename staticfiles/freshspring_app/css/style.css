@@ -3,12 +3,13 @@
 :root {
   --headingFontFamily: "Montserrat", sans-serif;
   --bodyFontFamily: "Open Sans", sans-serif;
-  --paragraphColor: #5f5f5f;
-  --headingColor: #13287e;
-  --primaryColor: #004995;
-  --starColor: #fee026;
+  --paragraphColor: #444c4e;
+  --headingColor: #256279;
+  --primaryColor: #38993F;
+  --starColor: #ffc107;
   --whiteColor: #ffffff;
   --blackColor: #000000;
+  --anchorColor: #2e7f35;
   --transition: all ease 0.5s;
   --fontSize: 16px;
 }
@@ -55,7 +56,7 @@ p:last-child {
   color: var(--headingColor);
 }
 .h1 a:hover, .h2 a:hover, .h3 a:hover, .h4 a:hover, .h5 a:hover, .h6 a:hover, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
-  color: var(--dangerColor);
+  color: var(--anchorColor);
 }
 
 .d-table {
@@ -111,7 +112,7 @@ p:last-child {
 }
 
 .bg-color-004995 {
-  background-color: #004995;
+  background-color: #38993F;
 }
 
 .bg-color-f0f6fd {
@@ -1216,14 +1217,14 @@ Features Area Style
 Service Area CSS
 ========================================================*/
 .service-area {
-  position: relative;
+  /*position: relative; */
   max-width: 1920px;
+  width: 100%;
   margin: auto;
 }
 .service-area .container-fluid {
   max-width: 1630px;
-  margin-left: auto;
-  margin-right: 0;
+  margin: 0 auto;
   padding-right: calc(var(--bs-gutter-x) * 0);
 }
 .service-area .section-heading {
@@ -1493,15 +1494,14 @@ Home Three Service Area CSS
 Fun Fact Area CSS
 ========================================================*/
 .fun-fact-area {
-  position: relative;
+  /*position: relative;*/
   overflow: hidden;
   max-width: 1920px;
   margin: auto;
 }
 .fun-fact-area .container-fluid {
   max-width: 1620px;
-  margin-left: auto;
-  margin-right: 0;
+  margin: 0 auto;
   padding-right: calc(var(--bs-gutter-x) * 0);
 }
 .fun-fact-area .fun-fact-bg {
@@ -1613,15 +1613,14 @@ Home Three Fun Fact Area CSS
 Why Choose Us Area
 ========================================================*/
 .why-choose-us-area {
-  position: relative;
+  /*position: relative;*/
   overflow: hidden;
   max-width: 1920px;
   margin: auto;
 }
 .why-choose-us-area .container-fluid {
   max-width: 1620px;
-  margin-left: auto;
-  margin-right: 0;
+  margin: 0 auto;
   padding-right: calc(var(--bs-gutter-x) * 0);
 }
 .why-choose-us-area .why-choose-us-content {
