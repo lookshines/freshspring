@@ -1170,8 +1170,9 @@ Features Area Style
 .features-area .features-content {
   display: flex;
   line-height: 30px;
+  width: fit-content;
   white-space: nowrap;
-  animation: marquee 25s linear infinite forwards;
+  animation: marquee 60s linear infinite forwards;
 }
 .features-area .features-content:hover {
   animation-play-state: paused;
@@ -1182,7 +1183,9 @@ Features Area Style
   margin-bottom: 0;
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin-right: 132px;
+  margin-left: 0;
+  margin-top: 0;
 }
 .features-area .features-content ul li {
   position: relative;
@@ -1207,7 +1210,7 @@ Features Area Style
 
 @keyframes marquee {
   0% {
-    transform: translateX(0);
+    transform: translateX(0%);
   }
   100% {
     transform: translateX(-66.6%);

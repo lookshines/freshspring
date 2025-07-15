@@ -14,19 +14,22 @@
                                 <div class="row">
                                     <div class="col-lg-7">
                                         <div class="banner-content">
-                                            <span class="sub-title"><img src="{% static 'freshspring_app/images/svg/star2.svg' %}" alt="image">Expert cleaning services</span>
-                                            <h1>Reliable cleaning service provider</h1>
+                                            <span class="sub-title"><img src="{% static 'freshspring_app/images/svg/star2.svg' %}" alt="image">Expert Water Treatment Services</span>
+                                            <h1>Reliable water treatment expert</h1>
                                             <div class="paragraph">
-                                                <p>Cleaning services are beneficial for those who may not have the time, equipment, or expertise to maintain cleanliness in their spaces.</p>
-                                                <a href="appointment.html" class="default-btn"><i class='bx bx-calendar-week'></i>Book A Schedule</a>
+                                                <p>Access to clean water is essential for every home and business. We use only high-quality materials and
+                                                   proven techniques to ensure long-term sustainability and solutions that meet each client's unique 
+                                                    needs.
+                                                </p>
+                                                <a href="appointment.html" class="default-btn"><i class='bx bx-calendar-week'></i>Request a Consultation</a>
                                                 <img class="banner-shape-2" src="{% static 'freshspring_app/images/shape/banner-shape-2.png' %}" alt="image">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-5">
                                         <div class="banner-image">
-                                            <img class="banner-image-1" src="{% static 'freshspring_app/images/banner/banner-image-1.png' %}" alt="image">
-                                            <img class="banner-shape-3" src="{% static 'freshspring_app/images/shape/banner-shape-3.png' %}" alt="image">
+                                            <img class="banner-image-1" src="{% static 'freshspring_app/images/banner/banner-home-image-1.jpg' %}" alt="image">
+                                            <!--<img class="banner-shape-3" src="{% static 'freshspring_app/images/shape/banner-shape-3.png' %}" alt="image">-->
                                         </div>
                                     </div>
                                 </div>
@@ -39,18 +42,18 @@
                                 <div class="row">
                                     <div class="col-lg-7">
                                         <div class="banner-content">
-                                            <span class="sub-title"><img src="{% static 'freshspring_app/images/svg/star2.svg' %}" alt="image">Expert cleaning services</span>
-                                            <h1>Reliable cleaning service provider</h1>
+                                            <span class="sub-title"><img src="{% static 'freshspring_app/images/svg/star2.svg' %}" alt="image">Professional Water Treatment Experts</span>
+                                            <h1>Best materials used</h1>
                                             <div class="paragraph">
-                                                <p>Cleaning services are beneficial for those who may not have the time, equipment, or expertise to maintain cleanliness in their spaces.</p>
-                                                <a href="about.html" class="default-btn"><i class='bx bx-calendar-week'></i>Book A Schedule</a>
+                                                <p>We use proven scientific methods and processes to purify water for both domestic and industrial use.heir spaces.</p>
+                                                <a href="about.html" class="default-btn"><i class='bx bx-calendar-week'></i>Request a Consultation</a>
                                                 <img class="banner-shape-2" src="{% static 'freshspring_app/images/shape/banner-shape-2.png' %}" alt="image">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-5">
                                         <div class="banner-image">
-                                            <img class="banner-image-1" src="{% static 'freshspring_app/images/banner/banner-image-1.png' %}" alt="image">
+                                            <img class="banner-image-1" src="{% static 'freshspring_app/images/banner/banner-home-image-2.jpg' %}" alt="image">
                                             <img class="banner-shape-3" src="{% static 'freshspring_app/images/shape/banner-shape-3.png' %}" alt="image">
                                         </div>
                                     </div>
@@ -75,7 +78,7 @@
             <img class="banner-shape-11" src="{% static 'freshspring_app/images/shape/banner-shape-11.png' %}" alt="image">
 
             <div class="satisfied-clients d-flex align-items-center">
-                <ul>
+                <!--<ul>
                     <li>
                         <a href="#" class="d-inline-block">
                             <img class="user-image-1" src="{% static 'freshspring_app/images/user/user-image-1.png' %}" alt="image">
@@ -91,11 +94,11 @@
                             <img class="user-image-1" src="{% static 'freshspring_app/images/user/user-image-3.png' %}" alt="image">
                         </a>
                     </li>
-                </ul>
+                </ul> -->
 
                 <div class="positive d-flex align-items-center">
                     <div class="info">
-                        <h3>1M+</h3>
+                        <h3>100+</h3>
                         <span>Satisfied clients</span>
                     </div>
 
@@ -112,48 +115,52 @@
         <div class="cleaning-process-area pt-100 pb-75">
             <div class="container">
                 <div class="section-title">
-                    <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">Our cleaning process</span>
-                    <h2>We follow some steps in cleaning service</h2>
+                    <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">Our treatment process</span>
+                    <h2>We follow four key steps in providing our treatment services</h2>
                 </div>
                 <div class="row" data-cues="slideInUp" data-duration="900">
                     <div class="col-lg-3 col-md-6">
                         <div class="cleaning-process-card">
                             <div class="process-card-top d-flex align-items-center justify-content-between">
                                 <h4>01.</h4>
-                                <img src="{% static 'freshspring_app/images/svg/discussion.svg' %}" alt="image">
+                                <img src="{% static 'freshspring_app/images/svg/initial-agreement.svg' %}" alt="image">
                             </div>
-                            <h3><a href="service-details.html">Initial Consultation</a></h3>
-                            <p>Vulputate vel diam suspendisse dolor sed nisl diam. Orci semper ipsum sed imperdiet dui aliquam.</p>
+                            <h3><a href="{% url 'services' %}">Initial assesment</a></h3>
+                            <p>We carry out initial assesment of the raw water quality in the client's facility either through a 
+                                physicsl inspection or an online assesment depending on the client preference.
+                            </p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="cleaning-process-card bg-2">
                             <div class="process-card-top d-flex align-items-center justify-content-between">
                                 <h4>02.</h4>
-                                <img src="{% static 'freshspring_app/images/svg/calendar.svg' %}" alt="image">
+                                <img src="{% static 'freshspring_app/images/svg/quote-payment.svg' %}" alt="image">
                             </div>
-                            <h3><a href="service-details.html">Scheduling Confirmation</a></h3>
-                            <p>Vulputate vel diam suspendisse dolor sed nisl diam. Orci semper ipsum sed imperdiet dui aliquam.</p>
+                            <h3><a href="{% url 'services' %}">Billing and payment</a></h3>
+                            <p>Based on assesment, a quote is sent to the client for approval. Once an agreement is reached,
+                                payment is made.
+                            </p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="cleaning-process-card bg-3">
                             <div class="process-card-top d-flex align-items-center justify-content-between">
                                 <h4>03.</h4>
-                                <img src="{% static 'freshspring_app/images/svg/wipe.svg' %}" alt="image">
+                                <img src="{% static 'freshspring_app/images/svg/installation.svg' %}" alt="image">
                             </div>
-                            <h3><a href="service-details.html">Cleaning Process</a></h3>
-                            <p>Vulputate vel diam suspendisse dolor sed nisl diam. Orci semper ipsum sed imperdiet dui aliquam.</p>
+                            <h3><a href="{% url 'services' %}">Supply and Installation</a></h3>
+                            <p>After receiving initial payment, equipment are supply and install.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="cleaning-process-card bg-4">
                             <div class="process-card-top d-flex align-items-center justify-content-between">
                                 <h4>04.</h4>
-                                <img src="{% static 'freshspring_app/images/svg/credit-card.svg' %}" alt="image">
+                                <img src="{% static 'freshspring_app/images/svg/feedback.svg' %}" alt="image">
                             </div>
-                            <h3><a href="service-details.html">Easy Payment</a></h3>
-                            <p>Vulputate vel diam suspendisse dolor sed nisl diam. Orci semper ipsum sed imperdiet dui aliquam.</p>
+                            <h3><a href="{% url 'services' %}">Feedback</a></h3>
+                            <p>We receive feedbacks from client after installation to access customer satisfaction.</p>
                         </div>
                     </div>
                 </div>
@@ -167,14 +174,14 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="about-image">
-                            <img src="{% static 'freshspring_app/images/about/about-image-1.jpg' %}" alt="image">
+                            <img src="{% static 'freshspring_app/images/about/clean-water-resize.jpg' %}" alt="image">
                             <div class="about-image-card">
                                 <div class="card-image">
-                                    <img src="{% static 'freshspring_app/images/about/about-image-2.jpg' %}" alt="image">
+                                    <img src="{% static 'freshspring_app/images/about/clean-water-2-resize.jpg' %}" alt="image">
                                 </div>
                                 <div class="card-image-body">
-                                    <h3>“Cleaning is not a job, it is a service that brings relief and peace of mind to people's lives.”</h3>
-                                    <h5>Richard Fulton</h5>
+                                    <h3>“Water treatment is not just a job to us; it is a calling, because everyone deserves clean water.”</h3>
+                                    <h5>Damola Mewojuaye</h5>
                                     <span>CEO & Founder</span>
                                 </div>
                             </div>
@@ -185,10 +192,11 @@
                         <div class="about-company-content">
                             <div class="section-heading">
                                 <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image"> About company</span>
-                                <h2>Our main goal is to work according to the client's needs</h2>
+                                <h2>Our main goal is to deliver sustainable and tailored-made water quality services.</h2>
                             </div>
                             <div class="paragraph">
-                                <p>We take pride in providing exceptional cleaning services to residential and commercial clients. With 20 years of experience in the industry, we have built a strong reputation for our attention to detail, reliability, and commitment to customer satisfaction.</p>
+                                <p>Fresh Spring is a unique water solutions company composed of highly skilled professionals who deliver custom water treatment services tailored 
+                                    to individual client needs. Our solutions are not only affordable but are also built with sustainability and long-term value in mind</p>
 
                                 <div class="row g-0">
                                     <div class="col-lg-6 col-sm-6">
@@ -217,10 +225,10 @@
                                                 <img src="{% static 'freshspring_app/images/svg/star-color.svg' %}" alt="image">
                                                 Experienced Team
                                             </li>
-                                            <li>
+                                            <!--<li>
                                                 <img src="{% static 'freshspring_app/images/svg/star-color.svg' %}" alt="image">
                                                 24/7 Online Support
-                                            </li>
+                                            </li>-->
                                         </ul>
                                     </div>
                                 </div>
@@ -240,10 +248,47 @@
                 <div class="features-content">
                     <ul>
                         <li>
-                            <a href="service-details.html">Regular cleaning</a>
+                            <a href="{% url 'services' %}">Design</a>
                             <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
                         </li>
                         <li>
+                            <a href="{% url 'services' %}">Construction and Installation</a>
+                            <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
+                        </li>
+                        <li>
+                            <a href="{% url 'services' %}">Consulting</a>
+                            <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
+                        </li>
+                        <li>
+                            <a href="{% url 'services' %}">Borehole</a>
+                            <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
+                        </li>
+                        <li>
+                            <a href="{% url 'services' %}">General supply</a>
+                            <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
+                        </li>
+                        <li>
+                            <a href="{% url 'services' %}">Design</a>
+                            <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
+                        </li>
+                        <li>
+                            <a href="{% url 'services' %}">Construction and Installation</a>
+                            <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
+                        </li>
+                        <li>
+                            <a href="{% url 'services' %}">Consulting</a>
+                            <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
+                        </li>
+                        <li>
+                            <a href="{% url 'services' %}">Borehole</a>
+                            <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
+                        </li>
+                        <li>
+                            <a href="{% url 'services' %}">General supply</a>
+                            <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
+                        </li>
+                        
+                        <!--<li>
                             <a href="service-details.html">Deep cleaning</a>
                             <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
                         </li>
@@ -270,23 +315,7 @@
                         <li>
                             <a href="service-details.html">Office/Commercial cleaning</a>
                             <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
-                        </li>
-                        <li>
-                            <a href="service-details.html">Regular cleaning</a>
-                            <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
-                        </li>
-                        <li>
-                            <a href="service-details.html">Deep cleaning</a>
-                            <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
-                        </li>
-                        <li>
-                            <a href="service-details.html">Move-in/Move-out cleaning</a>
-                            <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
-                        </li>
-                        <li>
-                            <a href="service-details.html">Office/Commercial cleaning</a>
-                            <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
-                        </li>
+                        </li>-->
                     </ul>
                 </div>
             </div>
@@ -298,37 +327,35 @@
             <div class="container-fluid">
                 <div class="section-heading">
                     <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">Service areas</span>
-                    <h2>Professional cleaning services we offer to our clients</h2>
+                    <h2>Professional water treatment services we offer to our clients</h2>
                 </div>
                 <div class="service-slider-item">
                     <div class="swiper swiperServiceSliderItem">
                         <div class="swiper-wrapper">
+                            {% for service in services %}
                             <div class="swiper-slide">
                                 <div class="service-card">
                                     <div class="service-card-image">
-                                        <img class="service-image-1" src="{% static 'freshspring_app/images/service/service-image-1.jpg' %}" alt="image">
+                                        <img class="service-image-1" src="{{ service.image.url }}" alt="{{ service.title }}">
+                                        {% if service.icon %}
                                         <div class="furniture">
-                                            <img src="{% static 'freshspring_app/images/svg/fumiture.svg' %}" alt="image">
+                                            <img src="{{ service.icon.url }}" alt="image">
                                         </div>
+                                        {% endif %}
                                     </div>
                                     <div class="service-card-body">
-                                        <h3>Deep Cleaning</h3>
-                                        <a href="service-details.html" class="learn-more">Learn More<i class="flaticon-right-arrow-3"></i></a>
+                                        <h3>{{ service.title }}</h3>
+                                        <a href="{ url 'services'}" class="learn-more">Learn More<i class="flaticon-right-arrow-3"></i></a>
                                     </div>
 
                                     <div class="hover-content">
-                                        <h3><a href="service-details.html">Deep Cleaning</a></h3>
-                                        <ul>
-                                            <li>Dusting and wiping surfaces</li>
-                                            <li>Vacuuming and mopping floors</li>
-                                            <li>Cleaning bathrooms</li>
-                                            <li>Kitchen cleaning</li>
-                                            <li>Emptying trash bins</li>
-                                        </ul>
+                                        <h3><a href="{% url 'services' %}"></a></h3>
+                                        <p>{{ service.description}}</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
+                            {% endfor %}
+                            <!--<div class="swiper-slide">
                                 <div class="service-card">
                                     <div class="service-card-image">
                                         <img class="service-image-1" src="{% static 'freshspring_app/images/service/service-image-8.jpg' %}" alt="image">
@@ -552,7 +579,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
 
@@ -580,7 +607,7 @@
                                 <div class="col-lg-3 col-sm-6 col-md-3">
                                     <div class="count-card">
                                         <div class="info d-flex align-items-center">
-                                            <h2 class="counter">20</h2>
+                                            <h2 class="counter">9</h2>
                                             <h2>+</h2>
                                         </div>
                                         <p>Years of Experience</p>
@@ -589,28 +616,28 @@
                                 <div class="col-lg-3 col-sm-6 col-md-3">
                                     <div class="count-card">
                                         <div class="info d-flex align-items-center">
-                                            <h2 class="counter">250</h2>
+                                            <h2 class="counter">100</h2>
                                             <h2>+</h2>
                                         </div>
-                                        <p>Professional Cleaners</p>
+                                        <p>Satisfied Customer</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-sm-6 col-md-3">
                                     <div class="count-card">
                                         <div class="info d-flex align-items-center">
-                                            <h2 class="counter">12</h2>
+                                            <h2 class="counter">10</h2>
                                             <h2>+</h2>
                                         </div>
-                                        <p>Award Winning</p>
+                                        <p>Years of Scientific Research</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-sm-6 col-md-3">
                                     <div class="count-card">
                                         <div class="info d-flex align-items-center">
-                                            <h2 class="counter">65</h2>
-                                            <h2>K+</h2>
+                                            <h2 class="counter">5</h2>
+                                            <h2>+</h2>
                                         </div>
-                                        <p>Worldwide Customers</p>
+                                        <p>Years of Worldwide Collaboration</p>
                                     </div>
                                 </div>
                             </div>
@@ -627,28 +654,30 @@
         <!-- End Fun Fact Area -->
 
         <!-- Start Why Choose Us Area -->
-        <div class="why-choose-us-area pb-100">
+        <div class="why-choose-us-area pb-100 pt-5">
             <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="why-choose-us-content">
                             <div class="section-heading">
                                 <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">Why Choose Us</span>
-                                <h2>We are experienced and have an expert team</h2>
+                                <h2>Experienced team. Premium materials. Trusted results.</h2>
                             </div>
 
                             <ul>
                                 <li>
                                     <h3><i class='bx bx-check'></i>Expertise and Experience</h3>
-                                    <p>A pellentesque quam in praesent vitae leo molestie egestas quis. Tempus posuere donec elementum id feugiat tempor. Tortor donec lectus sollicitudin ridiculus turpis et nulla id. Est tellus egestas amet ligula mi.</p>
+                                    <p>With a strong foundation in scientific research and industry best practices, we deliver reliable, data-driven water 
+                                        treatment solutions tailored to your needs.</p>
                                 </li>
                                 <li class="primary">
-                                    <h3><i class='bx bx-check'></i>Access to Professional Equipment</h3>
-                                    <p>Facilisi tortor et maecenas tincidunt commodo est. Semper vitae placerat rhoncus sit pellentesque at amet gravida. Amet curabitur at elit nunc in nunc morbi non non. Mauris at lorem at et bibendum lectus.</p>
+                                    <h3><i class='bx bx-check'></i>Trusted Quality, Proven Materials</h3>
+                                    <p>We prioritize quality by using materials that meet global standards—because your water system deserves the best.</p>
                                 </li>
                                 <li class="warning">
-                                    <h3><i class='bx bx-check'></i>Cost-Effective</h3>
-                                    <p>A leo semper posuere nunc quam accumsan est in. Accumsan volutpat in quis est. Nibh sit tellus egestas vivamus sed. Massa elementum duis sociis semper tortor mus velit habitant.</p>
+                                    <h3><i class='bx bx-check'></i>Cost-Effective Engineering</h3>
+                                    <p>We design sustainable water treatment systems optimized for long-term performance and minimal operational 
+                                        cost—delivering maximum value per liter treated.</p>
                                 </li>
                             </ul>
                             <img class="choose-shape-4" src="{% static 'freshspring_app/images/shape/choose-shape-4.png' %}" alt="image">
@@ -660,13 +689,13 @@
                             <div class="award-question d-flex align-items-center justify-content-between">
                                 <div class="symbol">
                                     <i class="flaticon-award-symbol"></i>
-                                    <h3>Award Wining Company</h3>
+                                    <h3>Proven Track Record of Excellence</h3>
                                 </div>
                                 <div class="">
                                     <h4>Have a question?</h4>
                                     <div class="">
                                         <span>Call us now:</span>
-                                        <a href="tel:14519534466">+1 (451) 953 4466</a>
+                                        <a href="tel:2347068473658">+234 (706) 847 3658</a>
                                     </div>
                                 </div>
 
@@ -682,7 +711,7 @@
         <!-- End Why Choose Us Area -->
 
         <!-- Start Our Expert Team Area -->
-        <div class="our-team-area pb-75">
+        <!--<div class="our-team-area pb-75">
             <div class="container">
                 <div class="section-title">
                     <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">Our Expert Team</span>
@@ -735,7 +764,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         <!-- End Our Expert Team Area -->
 
         <!-- Start Our Portfolio Area CSS -->
@@ -838,7 +867,7 @@
         <!-- End Our Portfolio Area CSS -->
 
         <!-- Start Pricing Area -->
-        <div class="pricing-area pt-100 pb-75">
+        <!--<div class="pricing-area pt-100 pb-75">
             <div class="container">
                 <div class="section-title">
                     <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">Pricing Plan</span>
@@ -974,7 +1003,7 @@
                 </div>
             </div>
             <img class="choose-shape-4 bounce" src="{% static 'freshspring_app/images/shape/choose-shape-4.png' %}" alt="image">
-        </div>
+        </div> -->
         <!-- End Pricing Area -->
 
         <!-- Start Testimonials Area -->
