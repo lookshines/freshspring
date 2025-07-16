@@ -333,6 +333,7 @@
                     <div class="swiper swiperServiceSliderItem">
                         <div class="swiper-wrapper">
                             {% for service in services %}
+                            {% if service %}
                             <div class="swiper-slide">
                                 <div class="service-card">
                                     <div class="service-card-image">
@@ -354,6 +355,7 @@
                                     </div>
                                 </div>
                             </div>
+                            {% endif %}
                             {% endfor %}
                             <!--<div class="swiper-slide">
                                 <div class="service-card">
