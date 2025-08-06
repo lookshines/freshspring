@@ -11,7 +11,7 @@
         <div class="page-content">
             <h2>Blog</h2>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
                 <li>Blog</li>
             </ul>
         </div>
@@ -28,29 +28,30 @@
             <div class="col-lg-8">
                 <div class="blog-details-content">
                     <div class="row">
+                        {% for blog in blogs %}
                         <div class="col-lg-12">
                             <div class="blog-card">
                                 <div class="blog-image">
                                     <a href="blog-details.html" class="d-block">
-                                        <img src="{% static 'freshspring_app/images/blog/blog-image-1.jpg' %}" alt="image">
+                                        <img src="{{ blog.image.url }}" alt="image">
                                     </a>
-                                    <div class="date">13 <span>July</span></div>
+                                    <div class="date">{{ blog.created_at|date:"d"}} <span>{{ blog.created_at|date:"F"}}</span></div>
                                 </div>
                                 <div class="blog-card-body">
                                     <ul class="comment">
-                                        <li><i class='bx bx-user'></i>Torado</li>
-                                        <li><i class='bx bx-message-rounded'></i>(02 Comment)</li>
+                                        <li><i class='bx bx-user'></i>FreshSpring</li>
+                                        <li><i class='bx bx-message-rounded'></i>({{blog.comments.count}} Comment)</li>
                                     </ul>
                                     <h3>
-                                        <a href="blog-details.html">Cleaning and organizing tips for a clutter-free home</a>
+                                        <a href="{% url 'blog_detail' blog.slug %}">{{ blog.title }}</a>
                                     </h3>
-                                    <p>Proin ut dictumst tellus egestas. Faucibus vel blandit sit ut nulla quam et mauris. Augue nullam arcu est a augue ornare faucibus morbi. Accumsan proin sed porta pharetra lectus enim suscipit. Venenatis sagittis id morbi diam diam elit et.</p>
-                                    <a href="blog-details.html" class="learn-more">Learn More <i class="flaticon-right-arrow-3"></i></a>
+                                    <p>{{ blog.content|slice:":50"}}</p>
+                                    <a href="{% url 'blog_detail' blog.slug %}" class="learn-more">Learn More <i class="flaticon-right-arrow-3"></i></a>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="col-lg-12">
+                        {% endfor %}
+                        <!--<div class="col-lg-12">
                             <div class="blog-card">
                                 <div class="blog-image">
                                     <a href="blog-details.html" class="d-block">
@@ -114,33 +115,50 @@
                                     <a href="blog-details.html" class="learn-more">Learn More <i class="flaticon-right-arrow-3"></i></a>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
 
                 <div class="service-pagination blog-pagination">
                     <nav aria-label="Page navigation example">
                         <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link active" href="#">1</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">2</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">
-                                        <i class="flaticon-right-arrow-3"></i>
-                                    </span>
-                                </a>
-                            </li>
+                            {# Previous Button #}
+                            {% if blogs.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ blogs.previous_page_number}}" aria-label="Previous">
+                                        <span aria-hidden="true">
+                                            <i class="flaticon-left-arrow-3"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            {% endif %}
+
+                            {# Page Number #}
+                            {% for num in blogs.paginator.page_range %}
+                                <li class="page-item">
+                                    <a class="page-link {% if blogs.number == num %}active{% endif %}" href="?page={{ num }}">
+                                        {{ num }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+
+                            {# Next Button #}
+                            {% if blogs.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ blogs.next_page_number }}" aria-label="Next">
+                                        <span aria-hidden="true">
+                                            <i class="flaticon-right-arrow-3"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            {% endif %}
                         </ul>
                     </nav>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="sidebar">
-                    <div class="search">
+                    <!--<div class="search">
                         <form class="sidebar-search">
                             <h3>Search</h3>
                             <div class="r-relative">
@@ -150,16 +168,18 @@
                                 </button>
                             </div>
                         </form>
-                    </div>
+                    </div>-->
 
                     <div class="choose-service">
                         <h3>Choose any service</h3>
                         <ul>
-                            <li class="active">
-                                <a href="#">Commercial Cleaning</a>
+                            {% for service in services %}
+                            <li class="{% if forloop.first %}active{% endif %}">
+                                <a href="{% url 'services' %}">{{ service.title }}</a>
                                 <i class='bx bx-chevron-right'></i>
                             </li>
-                            <li>
+                            {% endfor %}
+                            <!--<li>
                                 <a href="#">Residential Cleaning</a>
                                 <i class='bx bx-chevron-right'></i>
                             </li>
@@ -186,22 +206,24 @@
                             <li>
                                 <a href="#">Outdoor Cleaning</a>
                                 <i class='bx bx-chevron-right'></i>
-                            </li>
+                            </li>-->
                         </ul>
                     </div>
                     
                     <div class="news">
                         <h3>Recent posts</h3>
+                        {% for blog in blogs|slice:":5" %}
                         <div class="nes-feed">
-                            <img src="{% static 'freshspring_app/images/user/user-image-3.jpg' %}" alt="image">
+                            <img src="{{ blog.image.url}}" alt="image">
                             <div class="news-content">
-                                <span>July 15 2025</span>
+                                <span>{{ blog.created_at|date:"F j Y"}}</span>
                                 <h4>
-                                    <a href="#">Effective techniques for allergy -free cleaning</a>
+                                    <a href="#">{{ blog.title }}</a>
                                 </h4>
                             </div>
                         </div>
-                        <div class="nes-feed">
+                        {% endfor %}
+                        <!--<div class="nes-feed">
                             <img src="{% static 'freshspring_app/images/user/user-image-4.jpg' %}" alt="image">
                             <div class="news-content">
                                 <span>July 14 2025</span>
@@ -227,10 +249,10 @@
                                     <a href="#">Top 10 tips for a spotless and organized home</a>
                                 </h4>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
 
-                    <div class="popular-tag">
+                    <!--<div class="popular-tag">
                         <h3>Popular tags</h3>
                         <ul class="tags">
                             <li><a href="#">Cleaning</a></li>
@@ -242,7 +264,7 @@
                             <li><a href="#">Outdoor Cleaning</a></li>
                             <li><a href="#">Cleaning News</a></li>
                         </ul>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
@@ -251,7 +273,7 @@
 <!-- End Service Details Area -->
 
 <!-- Start Sign Up To Our Newsletter Area -->
-<div class="newsletter-area newsletter-service">
+<!--<div class="newsletter-area newsletter-service">
     <div class="container">
         <div class="newsletter-bg bg-color-8cb1dc">
             <div class="row g-0 align-items-center">
@@ -279,7 +301,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
 <!-- End Sign Up To Our Newsletter Area -->
 
 {% endblock %}

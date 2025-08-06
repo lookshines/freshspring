@@ -333,7 +333,6 @@
                     <div class="swiper swiperServiceSliderItem">
                         <div class="swiper-wrapper">
                             {% for service in services %}
-                            {% if service %}
                             <div class="swiper-slide">
                                 <div class="service-card">
                                     <div class="service-card-image">
@@ -346,7 +345,7 @@
                                     </div>
                                     <div class="service-card-body">
                                         <h3>{{ service.title }}</h3>
-                                        <a href="{ url 'services'}" class="learn-more">Learn More<i class="flaticon-right-arrow-3"></i></a>
+                                        <a href="{% url 'services' %}" class="learn-more">Learn More<i class="flaticon-right-arrow-3"></i></a>
                                     </div>
 
                                     <div class="hover-content">
@@ -355,7 +354,6 @@
                                     </div>
                                 </div>
                             </div>
-                            {% endif %}
                             {% endfor %}
                             <!--<div class="swiper-slide">
                                 <div class="service-card">
@@ -687,7 +685,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="why-choose-us-image">
-                            <img src="{% static 'freshspring_app/images/choose/choose-image-1.jpg' %}" alt="image">
+                            <img src="{% static 'freshspring_app/images/home/why-choose-us_resized.png' %}" alt="image">
                             <div class="award-question d-flex align-items-center justify-content-between">
                                 <div class="symbol">
                                     <i class="flaticon-award-symbol"></i>
@@ -781,29 +779,35 @@
                                     <h2>Keep an eye on our new projects regularly</h2>
                                 </div>
                                 <div class="view-btn">
-                                    <a href="portfolio.html" class="learn-more">View All Projects<i class="flaticon-right-arrow-3"></i></a>
+                                    <a href="{% url 'portfolio' %}" class="learn-more">View All Projects<i class="flaticon-right-arrow-3"></i></a>
                                 </div>
                             </div>
                             <div class="row">
+                                {% for project in projects %}
                                 <div class="col-lg-6 col-md-6">
                                     <div class="single-portfolio-card">
-                                        <a href="portfolio-details.html" class="d-block">
-                                            <img src="{% static 'freshspring_app/images/portfolio/portfolio-image-1.jpg' %}" alt="image">
+                                        <a href="{% url 'portfolio' %}" class="d-block">
+                                            {% if project.project_display %}
+                                            <img src="{{ project.project_display.url }}" alt="image">
+                                            {% endif %}
                                         </a>
                                         <div class="single-portfolio-body d-flex align-items-center justify-content-between">
                                             <div class="">
-                                                <span>Cleaning</span>
+                                                <span>{% if project.project_type %}{{ project.project_type }}{% endif %}</span>
                                                 <h3>
-                                                    <a href="portfolio-details.html">Commercial Cleaning</a>
+                                                    <a href="{% url 'portfolio' %}">{% if project.project_title %}{{ project.project_title }}
+                                                        {% endif %}
+                                                    </a>
                                                 </h3>
                                             </div>
-                                            <a href="portfolio-details.html" class="portfolio-btn">
+                                            <a href="{% url 'portfolio' %}" class="portfolio-btn">
                                                 <i class='bx bx-plus'></i>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-md-6">
+                                {% endfor %}  
+                                <!--<div class="col-lg-6 col-md-6">
                                     <div class="single-portfolio-card">
                                         <a href="portfolio-details.html" class="d-block">
                                             <img src="{% static 'freshspring_app/images/portfolio/portfolio-image-2.jpg' %}" alt="image">
@@ -820,47 +824,51 @@
                                             </a>
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <form class="portfolio-form">
+                        <form class="portfolio-form" method="POST">
+                            {% csrf_token %}
                             <div class="form-heading">
                                 <h3>Make an Appointment</h3>
                                 <span>24/7 phone lines customer service</span>
                                 <img class="portfolio-shape-1" src="{% static 'freshspring_app/images/shape/portfolio-shape-1.png' %}" alt="image">
                             </div>
                             <div class="form-body">
+                                {{ form.non_field_errors }}
                                 <div class="form-group">
                                     <i class='bx bx-user'></i>
-                                    <input type="text" class="form-control" placeholder="Name">
+                                    {{ form.fullname }}
                                 </div>
                                 <div class="form-group">
                                     <i class='bx bx-envelope'></i>
-                                    <input type="text" class="form-control" placeholder="Email">
+                                     {{ form.email }}
                                 </div>
                                 <div class="form-group">
                                     <i class='bx bx-phone-call'></i>
-                                    <input type="text" class="form-control" placeholder="Phone">
+                                     {{ form.phone }}
                                 </div>
                                 <div class="form-group">
                                     <i class='bx bx-layer'></i>
-                                    <select class="form-select form-control" aria-label="Default select example">
-                                        <option selected>Select service</option>
-                                        <option value="1">Window Cleaning</option>
-                                        <option value="2">Outdoor Cleaning</option>
-                                        <option value="3">Commercial Cleaning</option>
-                                    </select>
+                                     {{ form.request }}
                                 </div>
                                 <div class="form-group textarea">
                                     <i class='bx bx-edit-alt'></i>
-                                    <textarea class="form-control" placeholder="Write your message"></textarea>
+                                     {{ form.message }}
                                 </div>
 
-                                <button type="submit" class="default-btn more">Confirm Appointment<i class="flaticon-right-arrow-3"></i></button>
+                                <button type="submit" class="default-btn more">Send<i class="flaticon-right-arrow-3"></i></button>
                             </div>
                         </form>
+                        {% if messages %}
+                        <div class="alert-messages">
+                        {% for message in messages %}
+                            <div class="alert alert-success">{{ message }}</div>
+                        {% endfor %}
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -1013,21 +1021,24 @@
             <div class="container">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-lg-8">
+                        
                         <div class="content-button-items">
                             <div thumbsSlider="" class="swiper mySwiperButton">
                                 <div class="swiper-wrapper">
+                                    {% for testimonial in testimonials %}
                                     <div class="swiper-slide">
-                                        <img src="{% static 'freshspring_app/images/user/user-image-4.png' %}" alt="image">
+                                        <img src="{{testimonial.image.url}}" alt="image">
                                         <i class="flaticon-quote-6"></i>
                                     </div>
-                                    <div class="swiper-slide">
+                                    {% endfor %}
+                                    <!--<div class="swiper-slide">
                                         <img src="{% static 'freshspring_app/images/user/user-image-5.png' %}" alt="image">
                                         <i class="flaticon-quote-6"></i>
                                     </div>
                                     <div class="swiper-slide">
                                         <img src="{% static 'freshspring_app/images/user/user-image-6.png' %}" alt="image">
                                         <i class="flaticon-quote-6"></i>
-                                    </div>
+                                    </div>-->
                                 </div>
                             </div>
     
@@ -1042,14 +1053,16 @@
                             
                             <div class="swiper mySwiperContent">
                                 <div class="swiper-wrapper">
+                                    {% for testimonial in testimonials%}
                                     <div class="swiper-slide">
                                         <div class="single-testimonials-card">
-                                            <p>“I moved into a new apartment and wanted it thoroughly cleaned before settling in. They did an outstanding job! The cleaners were punctual and professional and took great care of my belongings. I am extremely satisfied with their service and will definitely hire them again.”</p>
-                                            <h3>Deirdre Tucker</h3>
-                                            <span>Client</span>
+                                            <p>“{{testimonial.testimony}}”</p>
+                                            <h3>{{testimonial.fullname}}</h3>
+                                            <span>{{testimonial.profession}}</span>
                                         </div>
                                     </div>
-                                    <div class="swiper-slide">
+                                    {% endfor %}
+                                    <!--<div class="swiper-slide">
                                         <div class="single-testimonials-card">
                                             <p>“I moved into a new apartment and wanted it thoroughly cleaned before settling in. They did an outstanding job! The cleaners were punctual and professional and took great care of my belongings. I am extremely satisfied with their service and will definitely hire them again.”</p>
                                             <h3>William Charlie</h3>
@@ -1062,7 +1075,7 @@
                                             <h3>Michelle Isabella</h3>
                                             <span>Developer</span>
                                         </div>
-                                    </div>
+                                    </div>-->
                                 </div>
                             </div>
                         </div>
@@ -1081,31 +1094,34 @@
                         <h2>Stay updates with our every latest news & articles</h2>
                     </div>
                     <div class="view-btn">
-                        <a href="blog.html" class="learn-more">View All Articles<i class="flaticon-right-arrow-3"></i></a>
+                        <a href="{% url 'blog' %}" class="learn-more">View All Articles<i class="flaticon-right-arrow-3"></i></a>
                     </div>
                 </div>
+                {% for blog in blogs %}
                 <div class="row justify-content-center" data-cues="slideInUp" data-duration="900">
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-card">
                             <div class="blog-image">
                                 <a href="blog-details.html" class="d-block">
-                                    <img src="{% static 'freshspring_app/images/blog/blog-image-1.jpg' %}" alt="image">
+                                    {% if blog.image %}
+                                    <img src="{{ blog.image.url }}" alt="image">
+                                    {% endif %}
                                 </a>
-                                <div class="date">13 <span>July</span></div>
+                                <div class="date">{{blog.created_at|date:"d"}} <span>{{ blog.created_at|date:"F"}}</span></div>
                             </div>
                             <div class="blog-card-body">
                                 <ul>
-                                    <li><i class='bx bx-user'></i>Torado</li>
-                                    <li><i class='bx bx-message-rounded'></i>(02 Comment)</li>
+                                    <li><i class='bx bx-user'></i>FreshSpring</li>
+                                    <li><i class='bx bx-message-rounded'></i>({{blog.comments.count}} Comment)</li>
                                 </ul>
                                 <h3>
-                                    <a href="blog-details.html">Cleaning and organizing tips for a clutter-free home</a>
+                                    <a href="blog-details.html">{{blog.title}}</a>
                                 </h3>
                                 <a href="blog-details.html" class="learn-more">Learn More <i class="flaticon-right-arrow-3"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
+                    <!--<div class="col-lg-4 col-md-6">
                         <div class="blog-card">
                             <div class="blog-image">
                                 <a href="blog-details.html" class="d-block">
@@ -1144,14 +1160,15 @@
                                 <a href="blog-details.html" class="learn-more">Learn More <i class="flaticon-right-arrow-3"></i></a>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
+                {% endfor %}
             </div>
         </div>
         <!-- End Latest News & Articles Area -->
 
         <!-- Start Sign Up To Our Newsletter Area -->
-        <div class="newsletter-area">
+        <!--<div class="newsletter-area">
             <div class="container">
                 <div class="newsletter-bg bg-color-004995">
                     <div class="row g-0 align-items-center">
@@ -1172,7 +1189,7 @@
                                 </div>
                                 <div class="info">
                                     <span>Have a question?</span>
-                                    <a href="tel:14519534466">+1 (451) 953 4466</a>
+                                    <a href="tel:14519534466">+234 (706) 847 3658</a>
                                 </div>
                             </div>
                         </div>
@@ -1182,6 +1199,6 @@
                     <img class="newsletter-shape-3 bounce" src="{% static 'freshspring_app/images/shape/newsletter-shape-3.png' %}" alt="image">
                 </div>
             </div>
-        </div>
+        </div>-->
         <!-- End Sign Up To Our Newsletter Area -->
 {% endblock %}

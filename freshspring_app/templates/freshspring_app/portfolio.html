@@ -4,26 +4,45 @@
 {% block title %}Services{% endblock %}
 
 {% block content %}
+<!-- Start Page Banner Area -->
+<div class="page-banner-area">
+    <div class="container">
+        <div class="page-content">
+            <h2>Portfolio</h2>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li>Portfolio</li>
+            </ul>
+        </div>
+    </div>
+    <img class="page-banner-shape-1" src="assets/images/shape/page-banner-shape-1.png" alt="image">
+    <img class="page-banner-shape-2" src="assets/images/shape/page-banner-shape-2.png" alt="image">
+</div>
+<!-- End Page Banner Area -->
+
 <!-- Start Our Portfolio Area -->
 <div class="portfolio-area-three portfolio-page pt-100 pb-75">
     <div class="container">
         <div class="row align-items-center">
+            {% for project in projects %}
             <div class="col-lg-3 col-md-6">
                 <div class="portfolio-card">
                     <div class="portfolio-image">
-                        <a href="portfolio-details.html" class="d-block">
+                        <!--<a href="portfolio-details.html" class="d-block">
                             <img src="{% static 'freshspring_app/images/portfolio/portfolio-image-5.jpg' %}" alt="image">
-                        </a>
+                        </a>-->
+                        <img src="{{ project.project_display.url }}" alt="image">
                         <div class="title-card">
-                            <span>Commercial</span>
+                            <span>{{ project.project_type }}</span>
                             <h3>
-                                <a href="portfolio-details.html">Window Cleaning</a>
+                                <a href="portfolio-details.html">{{ project.project_title }}</a>
                             </h3>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
+            {% endfor %}
+            <!--<div class="col-lg-3 col-md-6">
                 <div class="portfolio-card">
                     <div class="portfolio-image">
                         <a href="portfolio-details.html" class="d-block">
@@ -128,7 +147,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
 </div>
@@ -138,48 +157,52 @@
 <div class="cleaning-process-area pb-75">
     <div class="container">
         <div class="section-title">
-            <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">Our cleaning process</span>
-            <h2>We follow some steps in cleaning service</h2>
+            <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">Our treatment process</span>
+            <h2>We follow four key steps in providing our treatment services</h2>
         </div>
         <div class="row">
             <div class="col-lg-3 col-md-6">
                 <div class="cleaning-process-card">
                     <div class="process-card-top d-flex align-items-center justify-content-between">
-                        <h4>01,</h4>
-                        <img src="{% static 'freshspring_app/images/svg/discussion.svg' %}" alt="image">
+                        <h4>01.</h4>
+                        <img src="{% static 'freshspring_app/images/svg/initial-agreement.svg' %}" alt="image">
                     </div>
-                    <h3><a href="service-details.html">Initial Consultation</a></h3>
-                    <p>Vulputate vel diam suspendisse dolor sed nisl diam. Orci semper ipsum sed imperdiet dui aliquam.</p>
+                    <h3><a href="{% url 'services' %}">Initial assesment</a></h3>
+                    <p>We carry out initial assesment of the raw water quality in the client's facility either through a 
+                        physicsl inspection or an online assesment depending on the client preference.
+                    </p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="cleaning-process-card bg-2">
                     <div class="process-card-top d-flex align-items-center justify-content-between">
-                        <h4>02,</h4>
-                        <img src="{% static 'freshspring_app/images/svg/calendar.svg' %}" alt="image">
+                        <h4>02.</h4>
+                        <img src="{% static 'freshspring_app/images/svg/quote-payment.svg' %}" alt="image">
                     </div>
-                    <h3><a href="service-details.html">Scheduling Confirmation</a></h3>
-                    <p>Vulputate vel diam suspendisse dolor sed nisl diam. Orci semper ipsum sed imperdiet dui aliquam.</p>
+                    <h3><a href="{% url 'services' %}">Billing and payment</a></h3>
+                    <p>Based on assesment, a quote is sent to the client for approval. Once an agreement is reached,
+                        payment is made.
+                    </p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="cleaning-process-card bg-3">
                     <div class="process-card-top d-flex align-items-center justify-content-between">
-                        <h4>03,</h4>
-                        <img src="{% static 'freshspring_app/images/svg/wipe.svg' %}" alt="image">
+                        <h4>03.</h4>
+                        <img src="{% static 'freshspring_app/images/svg/installation.svg' %}" alt="image">
                     </div>
-                    <h3><a href="service-details.html">Cleaning Process</a></h3>
-                    <p>Vulputate vel diam suspendisse dolor sed nisl diam. Orci semper ipsum sed imperdiet dui aliquam.</p>
+                    <h3><a href="{% url 'services' %}">Supply and Installation</a></h3>
+                    <p>After receiving initial payment, equipment are supply and install.</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="cleaning-process-card bg-4">
                     <div class="process-card-top d-flex align-items-center justify-content-between">
-                        <h4>04,</h4>
-                        <img src="{% static 'freshspring_app/images/svg/credit-card.svg' %}" alt="image">
+                        <h4>04.</h4>
+                        <img src="{% static 'freshspring_app/images/svg/feedback.svg' %}" alt="image">
                     </div>
-                    <h3><a href="service-details.html">Easy Payment</a></h3>
-                    <p>Vulputate vel diam suspendisse dolor sed nisl diam. Orci semper ipsum sed imperdiet dui aliquam.</p>
+                    <h3><a href="{% url 'services' %}">Feedback</a></h3>
+                    <p>We receive feedbacks from client after installation to access customer satisfaction.</p>
                 </div>
             </div>
         </div>
@@ -188,7 +211,7 @@
 <!-- End Our Cleaning Process Area -->
 
 <!-- Start Sign Up To Our Newsletter Area -->
-<div class="newsletter-area newsletter-service">
+<!-- <div class="newsletter-area newsletter-service">
     <div class="container">
         <div class="newsletter-bg bg-color-8cb1dc">
             <div class="row g-0 align-items-center">
@@ -216,7 +239,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
 <!-- End Sign Up To Our Newsletter Area -->
 
 {% endblock %}

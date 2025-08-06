@@ -38,10 +38,10 @@
                 <div class="col-lg-4 col-md-12">
                     <div class="footer-weight">
                         <a href="index.html" class="d-block">
-                            <img class="footer-logo" src="{% static 'freshspring_app/images/logo.svg' %}" alt="image">
-                            <img class="footer-logo2" src="{% static 'freshspring_app/images/white-logo.svg' %}" alt="image">
+                            <img class="footer-logo" src="{% static 'freshspring_app/images/freshspring-logo.svg' %}" alt="image">
+                            <img class="footer-logo2" src="{% static 'freshspring_app/images/freshspring-logo-wb.svg' %}" alt="image">
                         </a>
-                        <p>Cleaning services are beneficial for those who may not have the time, equipment, or expertise to maintain cleanliness in their spaces.</p>
+                        <p>Every household deserve access to clean water</p>
                         <ul class="footer-social">
                             <li>
                                 <a href="https://www.facebook.com/" target="_blank">
@@ -69,15 +69,19 @@
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="footer-weight">
                         <h3>Contact info</h3>
-                        <p>782 Hazelwood Avenue, San Francisco, USA</p>
+                        <p>30, Erejuwa crescent, Lagos, Nigeria</p>
                         <ul class="contact">
                             <li>
                                 <i class='bx bx-envelope'></i>
-                                <a href="mailto:info@torado.com">info@torado.com</a>
+                                <a href="mailto:info@torado.com">info@freshspring.com</a>
                             </li>
                             <li class="phone">
                                 <i class='bx bx-phone-call'></i>
-                                <a href="tel:14519534466">+1 (451) 953 4466</a>
+                                <a href="tel:234708473658">+234 (706) 847 3658</a>
+                            </li>
+                            <li class="whatsapp">
+                                <i class='bx bx-message'></i>
+                                <a href="https://wa.me/2347068473658" target="_blank">+234 (706) 847 3658</a>
                             </li>
                         </ul>
                     </div>
@@ -86,11 +90,11 @@
                     <div class="footer-weight">
                         <h3>Quick links</h3>
                         <ul class="services">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="testimonials.html">Testimonials</a></li>
-                            <li><a href="appointment.html">Appointment</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li><a href="{% url 'services' %}">Services</a></li>
+                            <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                            <li><a href="{% url 'blog' %}">Blog</a></li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -98,11 +102,11 @@
                     <div class="footer-weight">
                         <h3>Our services</h3>
                         <ul class="services">
-                            <li><a href="services.html">Regular Cleaning</a></li>
-                            <li><a href="services.html">Deep Cleaning</a></li>
-                            <li><a href="services.html">Post-Event Cleaning</a></li>
-                            <li><a href="services.html">Commercial Cleaning</a></li>
-                            <li><a href="services.html">One-Time Cleaning</a></li>
+                            <li><a href="services.html">Design and Installation of water treatment facility</a></li>
+                            <li><a href="services.html">Construction and installation of water stachion and accessories</a></li>
+                            <li><a href="services.html">Water quality consulting</a></li>
+                            <li><a href="services.html">Design and installation of Industrial borehole</a></li>
+                            <li><a href="services.html">General supply of plumbing accessories</a></li>
                         </ul>
                     </div>
                 </div>
@@ -127,16 +131,16 @@
             <div class="copy">
                 <div class="row">
                     <div class="col-lg-7 col-md-12">
-                        <p>Copyrights by <span>Torado</span> All Rights Reserved. Developed by <a href="https://envytheme.com/" target="_blank">EnvyTheme</a></p>
+                        <p>Copyrights by <span>FreshSpring</span> All Rights Reserved. Developed by <a href="https://envytheme.com/" target="_blank">Tanlytic Tech</a></p>
                     </div>
-                    <div class="col-lg-5 col-md-12">
+                    <!--<div class="col-lg-5 col-md-12">
                         <div class="copy-info">
                             <ul>
                                 <li><a href="terms-conditions.html">Terms Of Service</a></li>
                                 <li><a href="privacy-policy.html">Privacy Policy</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
