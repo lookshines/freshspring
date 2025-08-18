@@ -158,7 +158,7 @@ Navbar Warp  Style
   margin-top: 0;
 }
 .navbar.sticky .navbar-toggler {
-  color: #020055;
+  color: #38993F; /*#020055*/
   font-size: inherit;
   box-shadow: unset;
   border: none;
