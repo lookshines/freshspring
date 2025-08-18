@@ -34,13 +34,14 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 # Application definition
 
 INSTALLED_APPS = [
+    "freshspring_app",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "freshspring_app"
+    'django_ckeditor_5',
 ]
 
 MIDDLEWARE = [
@@ -66,6 +67,8 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                # 👉 Add your custom context processor here
+                'freshspring_app.context_processors.latest_contact',
             ],
         },
     },
@@ -137,6 +140,26 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# CKEditor will save files here inside MEDIA_ROOT
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+CKEDITOR_5_CONFIGS = {
+    'default': {
+        'toolbar': [
+            'heading', '|',
+            'bold', 'italic', 'underline', 'strikethrough', 'subscript', 'superscript', '|',
+            'link', 'blockQuote', 'code', 'insertTable', '|',
+            'numberedList', 'bulletedList', 'todoList', '|',
+            'alignment', 'indent', 'outdent', '|',
+            'imageUpload', 'mediaEmbed', '|',
+            'undo', 'redo', 'findAndReplace', 'highlight',
+            'removeFormat', 'horizontalLine', 'specialCharacters'
+        ],
+        'language': 'en',
+    }
+}
+
 
 #Email Settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

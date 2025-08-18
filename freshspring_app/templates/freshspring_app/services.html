@@ -24,8 +24,14 @@
 <div class="cleaning-services-area pt-100 pb-70">
     <div class="container">
         <div class="section-title">
-            <span class="sub"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">Service areas</span>
-            <h2>Professional water treatment services we offer to our clients</h2>
+            {% for section in page_sections %}
+                {% if section.slug == 'services' %}
+                    {% for service in section.sections.all %}
+                        <span class="sub"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">{{service.icon_text}}</span>
+                        <h2>{{service.header}}</h2>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
         </div>
         <div class="row">
             {% for service in services %}
@@ -109,25 +115,52 @@
             <div class="col-lg-6">
                 <div class="why-choose-us-content">
                     <div class="section-heading">
-                        <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">Why Choose Us</span>
-                        <h2>Experienced team. Premium materials. Trusted results.</h2>
+                        {% for section in page_sections %}
+                            {% if section.slug == 'why-choose-us' %}
+                                {% for choose in section.sections.all %}
+                                    <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">{{choose.icon_text}}</span>
+                                    <h2>{{choose.header}}</h2>
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
                     </div>
-
                     <ul>
-                        <li>
-                            <h3><i class='bx bx-check'></i>Expertise and Experience</h3>
-                            <p>With a strong foundation in scientific research and industry best practices, we deliver reliable, data-driven water 
-                                        treatment solutions tailored to your needs.</p>
-                        </li>
-                        <li class="primary">
-                            <h3><i class='bx bx-check'></i>Trusted Quality, Proven Materials</h3>
-                            <p>We prioritize quality by using materials that meet global standards—because your water system deserves the best.</p>
-                        </li>
-                        <li class="warning">
-                            <h3><i class='bx bx-check'></i>Cost-Effective Engineering</h3>
-                            <p>We design sustainable water treatment systems optimized for long-term performance and minimal operational 
-                                        cost—delivering maximum value per liter treated.</p>
-                        </li>
+                        {% for section in page_sections %}
+                            {% if section.slug == 'why-choose-us' %}
+                                {% for value in section.pagesectionvalue.all %}
+                                    {% if value.position == '1' %}
+                                        <li>
+                                            <h3><i class='bx bx-check'></i>{{value.title}}</h3>
+                                            <p>{{value.content}}</p>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                        {% for section in page_sections %}
+                            {% if section.slug == 'why-choose-us' %}
+                                {% for value in section.pagesectionvalue.all %}
+                                    {% if value.position == '2' %}
+                                        <li class="primary">
+                                            <h3><i class='bx bx-check'></i>{{value.title}}</h3>
+                                            <p>{{value.content}}</p>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                        {% for section in page_sections %}
+                            {% if section.slug == 'why-choose-us' %}
+                                {% for value in section.pagesectionvalue.all %}
+                                    {% if value.position == '3' %}
+                                        <li class="warning">
+                                            <h3><i class='bx bx-check'></i>{{value.title}}</h3>
+                                            <p>{{value.content}}</p>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
                     </ul>
                             <img class="choose-shape-4" src="{% static 'freshspring_app/images/shape/choose-shape-4.png' %}" alt="image">
                 </div>
@@ -142,7 +175,7 @@
                         </div>
                         <div class="">
                             <h4>Need support?</h4>
-                            <a href="mailto:info@freshspring.com.ng">info@freshspring.com.ng</a>
+                            <a href="mailto:{{contact.email}}">{{contact.email}}</a>
                         </div>
 
                         <img class="choose-shape-2" src="{% static 'freshspring_app/images/shape/choose-shape-5.png' %}" alt="image">

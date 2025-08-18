@@ -1,7 +1,7 @@
 {% extends 'freshspring_app/base.html' %}
 {% load static %}
 
-{% block title %}Services{% endblock %}
+{% block title %}blog{% endblock %}
 
 {% block content %}
 
@@ -45,7 +45,7 @@
                                     <h3>
                                         <a href="{% url 'blog_detail' blog.slug %}">{{ blog.title }}</a>
                                     </h3>
-                                    <p>{{ blog.content|slice:":50"}}</p>
+                                    <p>{{ blog.content|striptags|slice:":50"}}</p>
                                     <a href="{% url 'blog_detail' blog.slug %}" class="learn-more">Learn More <i class="flaticon-right-arrow-3"></i></a>
                                 </div>
                             </div>

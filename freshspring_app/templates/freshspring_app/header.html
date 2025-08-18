@@ -53,12 +53,12 @@
                         <ul>
                             <li>
                                 <img class="mail" src="{% static 'freshspring_app/images/svg/mail.svg' %}" alt="image">
-                                <a href="mailto:hello@torado.com">info@freshspringng.com</a>
+                                <a href="mailto:{{contact.email}}">{{contact.email}}</a>
                             </li>
                             <li>
                                 <img class="mail" src="{% static 'freshspring_app/images/svg/phone-call.svg' %}" alt="image">
                                 <span>Call for Consultation: </span>
-                                <a href="tel:2347068473658"> +234 (706) 847 3658</a>
+                                <a href="tel:{{contact.phone}}"> +{{formated_phone}}</a>
                             </li>
                         </ul>
                     </div>
@@ -172,25 +172,25 @@
     <div class="offcanvas-body">
         <div class="accordion" id="navbarAccordion">
             <div class="accordion-item">
-                <a href="{% url 'home' %}" class="accordion-link active">
+                <a href="{% url 'home' %}" class="accordion-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}">
                     Home
                 </a>
             </div>
 
             <div class="accordion-item">
-                <a href="{% url 'services' %}" class="accordion-link">Services</a>
+                <a href="{% url 'services' %}" class="accordion-link {% if request.resolver_match.url_name == 'services' %}active{% endif %}">Services</a>
             </div>
 
             <div class="accordion-item">
-                <a href="{% url 'portfolio' %}" class="accordion-link">Portfolio</a>
+                <a href="{% url 'portfolio' %}" class="accordion-link {% if request.resolver_match.url_name == 'portfolio' %}active{% endif %}">Portfolio</a>
             </div>
 
             <div class="accordion-item">
-                <a href="{% url 'blog' %}" class="accordion-link">Blog</a>
+                <a href="{% url 'blog' %}" class="accordion-link {% if request.resolver_match.url_name == 'blog' %}active{% endif %}">Blog</a>
             </div>
 
             <div class="accordion-item">
-                <a class="accordion-button without-icon" href="{ url 'contact'}">
+                <a class="accordion-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}" href="{ url 'contact'}">
                     Contact
                 </a>
             </div>

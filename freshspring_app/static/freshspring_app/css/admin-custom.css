@@ -1,0 +1,39 @@
+/* === Brand Colors === */
+:root {
+    --primary: #38993F;   /* your primary brand color */
+    --secondary: #ffc107; /* your secondary brand color */
+    --light: #f3f4f6;     /* optional light background */
+    --dark: #111827;      /* optional dark text */
+}
+
+/* === Apply Branding === */
+
+/* Top header */
+#header {
+    background: var(--primary) !important;
+    color: white !important;
+}
+
+/* Header links */
+#header a {
+    color: var(--secondary) !important;
+}
+
+/* Index page module titles */
+.module caption {
+    background: var(--primary)!important;
+    color: white !important;
+    font-weight: bold !important;
+}
+
+/* Save button (green by default) → use secondary */
+input[type=submit].default {
+    background: var(--secondary) !important;
+    color: black !important;
+    border: none !important;
+}
+
+input[type=submit].default:hover {
+    background: var(--primary) !important;
+    color: white !important;
+}

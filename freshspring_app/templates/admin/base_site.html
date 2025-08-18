@@ -1,0 +1,12 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'freshspring_app/css/admin-custom.css' %}">
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name" style="color: red;"><a href="{% url 'admin:index' %}">FreshSpring Admin</a></h1>
+{% endblock %}
+freshspring_app\templates\admin\base_site.html

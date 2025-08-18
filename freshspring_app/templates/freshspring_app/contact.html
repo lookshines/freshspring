@@ -1,7 +1,7 @@
 {% extends 'freshspring_app/base.html' %}
 {% load static %}
 
-{% block title %}Services{% endblock %}
+{% block title %}Contact{% endblock %}
 
 {% block content %}
 
@@ -28,46 +28,50 @@
             <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">Contact Information</span>
             <h2>Call, email or write to us whatever you need</h2>
         </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="phone-card">
-                    <div class="content">
-                        <img src="{% static 'freshspring_app/images/svg/map-pin.svg' %}" alt="image">
-                        <h3>Office Address</h3>
-                        <span>30, Erejuwa crescent, Lagos, Nigeria</span>
+        {% if contact %}
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="phone-card">
+                        <div class="content">
+                            <img src="{% static 'freshspring_app/images/svg/map-pin.svg' %}" alt="image">
+                            <h3>Office Address</h3>
+                            <span>{{contact.address}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="phone-card content-card">
+                        <div class="content">
+                            <img src="{% static 'freshspring_app/images/svg/phone.svg' %}" alt="image">
+                            <h3>Phone Number</h3>
+                            <a href="tel:{{contact.phone}}">+{{formated_phone}}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="phone-card mail-card">
+                        <div class="content">
+                            <img src="{% static 'freshspring_app/images/svg/mail3.svg' %}" alt="image">
+                            <h3>Mail Address</h3>
+                            <a href="mailto:{{contact.email}}">{{contact.email}}</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="phone-card content-card">
-                    <div class="content">
-                        <img src="{% static 'freshspring_app/images/svg/phone.svg' %}" alt="image">
-                        <h3>Phone Number</h3>
-                        <a href="tel:234708473658">+234 (706) 847 3658</a>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="phone-card content-card">
+                        <div class="content">
+                            <img src="{% static 'freshspring_app/images/svg/whatsapp.svg' %}" alt="image">
+                            <h3>WhatsApp</h3>
+                            <a href="https://wa.me/{{contact.whatsapp}}" target="_blank">{{formated_whatsapp}}</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="phone-card mail-card">
-                    <div class="content">
-                        <img src="{% static 'freshspring_app/images/svg/mail3.svg' %}" alt="image">
-                        <h3>Mail Address</h3>
-                        <a href="mailto:info@freshspring.com.ng">info@freshspring.com.ng</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="phone-card content-card">
-                    <div class="content">
-                        <img src="{% static 'freshspring_app/images/svg/whatsapp.svg' %}" alt="image">
-                        <h3>WhatsApp</h3>
-                        <a href="https://wa.me/2347068473658" target="_blank">+234 (706) 847 3658</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% else %}
+            <div class="alert alert-warning">No contact information available.</div>
+        {% endif %}
     </div>
 </div>
 <!-- End Contact Us Area -->

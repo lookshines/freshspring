@@ -48,7 +48,7 @@
                                     <i class="flaticon-facebook-1"></i>
                                 </a>
                             </li>
-                            <li>
+                            <!--<li>
                                 <a href="https://www.twitter.com/" target="_blank">
                                     <i class="flaticon-twitter-1"></i>
                                 </a>
@@ -62,26 +62,26 @@
                                 <a href="https://www.instagram.com/" target="_blank">
                                     <i class="flaticon-instagram"></i>
                                 </a>
-                            </li>
+                            </li>-->
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="footer-weight">
                         <h3>Contact info</h3>
-                        <p>30, Erejuwa crescent, Lagos, Nigeria</p>
+                        <p>{{contact.address}}</p>
                         <ul class="contact">
                             <li>
                                 <i class='bx bx-envelope'></i>
-                                <a href="mailto:info@torado.com">info@freshspring.com</a>
+                                <a href="mailto:{{contact.email}}">{{contact.email}}</a>
                             </li>
                             <li class="phone">
                                 <i class='bx bx-phone-call'></i>
-                                <a href="tel:234708473658">+234 (706) 847 3658</a>
+                                <a href="tel:{{contact.phone}}">+{{formated_phone}}</a>
                             </li>
                             <li class="whatsapp">
                                 <i class='bx bx-message'></i>
-                                <a href="https://wa.me/2347068473658" target="_blank">+234 (706) 847 3658</a>
+                                <a href="https://wa.me/{{contact.whatsapp}}" target="_blank">+{{formated_whatsapp}}</a>
                             </li>
                         </ul>
                     </div>

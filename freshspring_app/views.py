@@ -3,8 +3,9 @@ from django.contrib import messages
 from django.core.paginator import Paginator
 from django.core.mail import send_mail
 from django.conf import settings
-from .models import Services, Projects, ProjectImages, Testimonial, Blog, Comment
-from .forms import ContactForm
+from .models import *
+from django.db.models import Prefetch
+from .forms import ContactForm, CommentForm
 
 # Create your views here.
 
@@ -32,7 +33,8 @@ def handle_contact_form(request):
             fail_silently=False,
         )
         messages.success(request, "Thank you! Your message has been sent successfully.")
-        return form, True
+        form1 = ContactForm()
+        return form1, True
     return form, False
         
 
@@ -42,10 +44,37 @@ def index(request):
     project_images = ProjectImages.objects.all()
     testimonials = Testimonial.objects.all().order_by('-created_at')[:3]
     blogs = Blog.objects.all().order_by('created_at')[:3].prefetch_related()
-    
     form, success = handle_contact_form(request)
-    if success:
-        return redirect('home')
+    contact = ContactInformation.objects.order_by('-id').first()
+    
+    phone = contact.phone if contact else ''
+    whatsapp = contact.whatsapp if contact else ''
+    
+    formated_phone = f"{phone[:3]} ({phone[3:6]}) {phone[6:9]} {phone[-4:]}" if phone else ''
+    formated_whatsapp = f"{whatsapp[:3]} ({whatsapp[3:6]}) {phone[6:9]} {phone[-4:]}" if whatsapp else ''
+    
+    page_sections = PageSection.objects.prefetch_related(
+        'sections',
+        'pagesectionbanner',
+        'pagesectiontreatment',
+        Prefetch(
+            'pagesectionabout',
+            queryset=About.objects.order_by('-id').prefetch_related('about')
+        ),
+        'pagesectionvalue',
+        'pagesectionfeatures',
+        'pagesectionfunfact'
+    )
+    
+    features = []
+    for section in page_sections:
+        if section.slug == 'about':
+            latest_about = section.pagesectionabout.all().first()
+            features.extend(latest_about.about.all())
+            
+    half = len(features) // 2 + len(features) % 2
+    col1 = features[:half]
+    col2 = features[half:]
     
     context = {
         'services': services,
@@ -53,17 +82,45 @@ def index(request):
         'project_images': project_images,
         'form': form,
         'testimonials': testimonials,
-        'blogs': blogs
+        'blogs': blogs,
+        'page_sections': page_sections,
+        'col1':col1,
+        'col2':col2,
+        'contact': contact,
+        'formated_phone': formated_phone,
+        'formated_whatsapp': formated_whatsapp,
     }    
     return render(request, 'freshspring_app/index.html', context)
 
 def services(request):
     services = Services.objects.all()
-    return render(request, 'freshspring_app/services.html', {'services': services})
+    page_sections = PageSection.objects.prefetch_related(
+        'sections',
+        'pagesectionvalue'
+    )
+    contact = ContactInformation.objects.order_by('-id').first()
+    
+    
+    context = {
+        'services': services,
+        'page_sections': page_sections,
+        'contact': contact,
+    }
+    
+    return render(request, 'freshspring_app/services.html', context)
 
 def portfolio(request):
+    page_sections = PageSection.objects.prefetch_related(
+        'sections',
+        'pagesectiontreatment'
+    )
     projects = Projects.objects.all()
-    return render(request, 'freshspring_app/portfolio.html',{'projects': projects})
+    
+    context = {
+        'page_sections': page_sections,
+        'projects': projects
+    }
+    return render(request, 'freshspring_app/portfolio.html',context)
 
 def blog(request):
     blogs = Blog.objects.all().order_by('created_at')
@@ -81,20 +138,45 @@ def blog(request):
 
 def contact(request):
     form, success = handle_contact_form(request)
-    if success:
-        return redirect('home')
+    contact = ContactInformation.objects.order_by('-id').first()
     
-    return render(request, 'freshspring_app/contact.html', {'form': form})
+    phone = contact.phone if contact else ''
+    whatsapp = contact.whatsapp if contact else ''
+    
+    formated_phone = f"{phone[:3]} ({phone[3:6]}) {phone[6:9]} {phone[-4:]}" if phone else ''
+    formated_whatsapp = f"{whatsapp[:3]} ({whatsapp[3:6]}) {phone[6:9]} {phone[-4:]}" if whatsapp else ''   
+    
+    context = {
+        'form': form,
+        'contact': contact,
+        'formated_phone': formated_phone,
+        'formated_whatsapp': formated_whatsapp,
+    }
+    
+    return render(request, 'freshspring_app/contact.html', context)
 
 def blog_detail(request, slug):
     blogs = Blog.objects.all().order_by('created_at')
     post = get_object_or_404(Blog, slug=slug)
     comments = post.comments.all()
     services= Services.objects.all()
+    
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)   # don’t save yet
+            comment.blog = post                # attach blog
+            comment.save()
+            return redirect('blog_detail', slug=slug)
+        
+    else:
+        form = CommentForm()
+    
     context = {
         'post': post,
         'comments': comments,
         'services': services,
-        'blogs': blogs
+        'blogs': blogs,
+        'form': form
     } 
     return render(request, 'freshspring_app/blog_details.html', context)

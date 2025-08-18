@@ -8,59 +8,62 @@
         <div class="banner-slider-items">
             <div class="swiper myBannerSlider">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="banner-area">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-lg-7">
-                                        <div class="banner-content">
-                                            <span class="sub-title"><img src="{% static 'freshspring_app/images/svg/star2.svg' %}" alt="image">Expert Water Treatment Services</span>
-                                            <h1>Reliable water treatment expert</h1>
-                                            <div class="paragraph">
-                                                <p>Access to clean water is essential for every home and business. We use only high-quality materials and
-                                                   proven techniques to ensure long-term sustainability and solutions that meet each client's unique 
-                                                    needs.
-                                                </p>
-                                                <a href="appointment.html" class="default-btn"><i class='bx bx-calendar-week'></i>Request a Consultation</a>
-                                                <img class="banner-shape-2" src="{% static 'freshspring_app/images/shape/banner-shape-2.png' %}" alt="image">
+                    {% for section in page_sections %}
+                        {% if section.slug == 'home-banner' %}
+                            {% for banner in section.pagesectionbanner.all %}
+                                <div class="swiper-slide">
+                                    <div class="banner-area">
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-lg-7">
+                                                    <div class="banner-content">
+                                                        <span class="sub-title"><img src="{% static 'freshspring_app/images/svg/star2.svg' %}" alt="image">{{ banner.icon_text }}</span>
+                                                        <h1>{{ banner.header }}</h1>
+                                                        <div class="paragraph">
+                                                            <p>{{ banner.content }}</p>
+                                                            <a href="{% url 'contact' %}" class="default-btn"><i class='bx bx-calendar-week'></i>Request a Consultation</a>
+                                                            <img class="banner-shape-2" src="{% static 'freshspring_app/images/shape/banner-shape-2.png' %}" alt="image">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5">
+                                                    <div class="banner-image">
+                                                        <img class="banner-image-1" src="{{ banner.image.url }}" alt="image">
+                                                        <img class="banner-shape-3" src="{% static 'freshspring_app/images/shape/banner-shape-3.png' %}" alt="image">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-5">
-                                        <div class="banner-image">
-                                            <img class="banner-image-1" src="{% static 'freshspring_app/images/banner/banner-home-image-1.jpg' %}" alt="image">
-                                            <!--<img class="banner-shape-3" src="{% static 'freshspring_app/images/shape/banner-shape-3.png' %}" alt="image">-->
-                                        </div>
-                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="banner-area">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-lg-7">
-                                        <div class="banner-content">
-                                            <span class="sub-title"><img src="{% static 'freshspring_app/images/svg/star2.svg' %}" alt="image">Professional Water Treatment Experts</span>
-                                            <h1>Best materials used</h1>
-                                            <div class="paragraph">
-                                                <p>We use proven scientific methods and processes to purify water for both domestic and industrial use.heir spaces.</p>
-                                                <a href="about.html" class="default-btn"><i class='bx bx-calendar-week'></i>Request a Consultation</a>
-                                                <img class="banner-shape-2" src="{% static 'freshspring_app/images/shape/banner-shape-2.png' %}" alt="image">
+                                <!--<div class="swiper-slide">
+                                    <div class="banner-area">
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-lg-7">
+                                                    <div class="banner-content">
+                                                        <span class="sub-title"><img src="{% static 'freshspring_app/images/svg/star2.svg' %}" alt="image">Professional Water Treatment Experts</span>
+                                                        <h1>Best materials used</h1>
+                                                        <div class="paragraph">
+                                                            <p>We use proven scientific methods and processes to purify water for both domestic and industrial use.heir spaces.</p>
+                                                            <a href="about.html" class="default-btn"><i class='bx bx-calendar-week'></i>Request a Consultation</a>
+                                                            <img class="banner-shape-2" src="{% static 'freshspring_app/images/shape/banner-shape-2.png' %}" alt="image">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5">
+                                                    <div class="banner-image">
+                                                        <img class="banner-image-1" src="{% static 'freshspring_app/images/banner/banner-home-image-2.jpg' %}" alt="image">
+                                                        <img class="banner-shape-3" src="{% static 'freshspring_app/images/shape/banner-shape-3.png' %}" alt="image">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-5">
-                                        <div class="banner-image">
-                                            <img class="banner-image-1" src="{% static 'freshspring_app/images/banner/banner-home-image-2.jpg' %}" alt="image">
-                                            <img class="banner-shape-3" src="{% static 'freshspring_app/images/shape/banner-shape-3.png' %}" alt="image">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                </div>-->
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
             <div class="banner-slider-button">
@@ -97,15 +100,20 @@
                 </ul> -->
 
                 <div class="positive d-flex align-items-center">
-                    <div class="info">
-                        <h3>100+</h3>
-                        <span>Satisfied clients</span>
-                    </div>
-
-                    <div class="info rating">
-                        <h3>99%</h3>
-                        <span>Positive rating</span>
-                    </div>
+                    {% for section in page_sections %}
+                        {% if section.slug == 'home-banner' %}
+                            {% with banner=section.pagesectionbanner.all|dictsortreversed:"id"|first %}
+                                <div class="info">
+                                    <h3>{{banner.client}}</h3>
+                                    <span>Satisfied clients</span>
+                                </div>
+                                <div class="info rating">
+                                    <h3>{{banner.rating}}</h3>
+                                    <span>Positive rating</span>
+                                </div>
+                            {% endwith %}
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -114,55 +122,89 @@
         <!-- Start Our Cleaning Process Area -->
         <div class="cleaning-process-area pt-100 pb-75">
             <div class="container">
-                <div class="section-title">
-                    <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">Our treatment process</span>
-                    <h2>We follow four key steps in providing our treatment services</h2>
-                </div>
+                {% for service in page_sections %}
+                    {% if service.slug == 'treatment-section' %}
+                        {% for treatment in service.sections.all %}
+                            <div class="section-title">
+                                <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">{{treatment.icon_text}}</span>
+                                <h2>{{ treatment.header }}</h2>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
                 <div class="row" data-cues="slideInUp" data-duration="900">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="cleaning-process-card">
-                            <div class="process-card-top d-flex align-items-center justify-content-between">
-                                <h4>01.</h4>
-                                <img src="{% static 'freshspring_app/images/svg/initial-agreement.svg' %}" alt="image">
-                            </div>
-                            <h3><a href="{% url 'services' %}">Initial assesment</a></h3>
-                            <p>We carry out initial assesment of the raw water quality in the client's facility either through a 
-                                physicsl inspection or an online assesment depending on the client preference.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="cleaning-process-card bg-2">
-                            <div class="process-card-top d-flex align-items-center justify-content-between">
-                                <h4>02.</h4>
-                                <img src="{% static 'freshspring_app/images/svg/quote-payment.svg' %}" alt="image">
-                            </div>
-                            <h3><a href="{% url 'services' %}">Billing and payment</a></h3>
-                            <p>Based on assesment, a quote is sent to the client for approval. Once an agreement is reached,
-                                payment is made.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="cleaning-process-card bg-3">
-                            <div class="process-card-top d-flex align-items-center justify-content-between">
-                                <h4>03.</h4>
-                                <img src="{% static 'freshspring_app/images/svg/installation.svg' %}" alt="image">
-                            </div>
-                            <h3><a href="{% url 'services' %}">Supply and Installation</a></h3>
-                            <p>After receiving initial payment, equipment are supply and install.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="cleaning-process-card bg-4">
-                            <div class="process-card-top d-flex align-items-center justify-content-between">
-                                <h4>04.</h4>
-                                <img src="{% static 'freshspring_app/images/svg/feedback.svg' %}" alt="image">
-                            </div>
-                            <h3><a href="{% url 'services' %}">Feedback</a></h3>
-                            <p>We receive feedbacks from client after installation to access customer satisfaction.</p>
-                        </div>
-                    </div>
+                    {% for service in page_sections %}
+                        {% if service.slug == 'treatment-section' %}
+                            {% for treatment in service.pagesectiontreatment.all %}
+                                {% if treatment.serial == '01' %}
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="cleaning-process-card">
+                                            <div class="process-card-top d-flex align-items-center justify-content-between">
+                                                <h4>01.</h4>
+                                                <img src="{{ treatment.icon.url }}" alt="image">
+                                            </div>
+                                            <h3><a href="{% url 'services' %}">{{treatment.title}}</a></h3>
+                                            <p>{{treatment.content}}</p>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                    {% for service in page_sections %}
+                        {% if service.slug == 'treatment-section' %}
+                            {% for treatment in service.pagesectiontreatment.all %}
+                                {% if treatment.serial == '02' %}
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="cleaning-process-card bg-2">
+                                            <div class="process-card-top d-flex align-items-center justify-content-between">
+                                                <h4>02.</h4>
+                                                <img src="{{treatment.icon.url}}" alt="image">
+                                            </div>
+                                            <h3><a href="{% url 'services' %}">{{treatment.title}}</a></h3>
+                                            <p>{{treatment.content}}</p>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                    {% for service in page_sections %}
+                        {% if service.slug == 'treatment-section' %}
+                            {% for treatment in service.pagesectiontreatment.all %}
+                                {% if treatment.serial == '03' %} 
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="cleaning-process-card bg-3">
+                                            <div class="process-card-top d-flex align-items-center justify-content-between">
+                                                <h4>03.</h4>
+                                                <img src="{{treatment.icon.url}}" alt="image">
+                                            </div>
+                                            <h3><a href="{% url 'services' %}">{{treatment.title}}</a></h3>
+                                            <p>{{treatment.content}}</p>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                    {% for service in page_sections %}
+                        {% if service.slug == 'treatment-section' %}
+                            {% for treatment in service.pagesectiontreatment.all %}
+                                {% if treatment.serial == '04' %} 
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="cleaning-process-card bg-4">
+                                            <div class="process-card-top d-flex align-items-center justify-content-between">
+                                                <h4>04.</h4>
+                                                <img src="{{treatment.icon.url}}" alt="image">
+                                            </div>
+                                            <h3><a href="{% url 'services' %}">{{treatment.title}}</a></h3>
+                                            <p>{{treatment.content}}</p>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}                 
                 </div>
             </div>
         </div>
@@ -179,61 +221,65 @@
                                 <div class="card-image">
                                     <img src="{% static 'freshspring_app/images/about/clean-water-2-resize.jpg' %}" alt="image">
                                 </div>
-                                <div class="card-image-body">
-                                    <h3>“Water treatment is not just a job to us; it is a calling, because everyone deserves clean water.”</h3>
-                                    <h5>Damola Mewojuaye</h5>
-                                    <span>CEO & Founder</span>
-                                </div>
+                                {% for service in page_sections %}
+                                    {% if service.slug == 'about' %}
+                                        {% with about=service.pagesectionabout.all.0 %}
+                                            <div class="card-image-body">
+                                                <h3>“{{about.quote}}”</h3>
+                                                <h5>{{about.name}}</h5>
+                                                <span>{{about.role}}</span>
+                                            </div>
+                                        {% endwith %}
+                                    {% endif %}
+                                {% endfor %}
                             </div>
                             <img class="about-shape-1" src="{% static 'freshspring_app/images/shape/about-shape-1.png' %}" alt="image">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="about-company-content">
-                            <div class="section-heading">
-                                <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image"> About company</span>
-                                <h2>Our main goal is to deliver sustainable and tailored-made water quality services.</h2>
-                            </div>
+                            {% for service in page_sections %}
+                                {% if service.slug == 'about' %}
+                                    {% for about in service.sections.all %}
+                                        <div class="section-heading">
+                                            <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">{{about.icon_text}}</span>
+                                            <h2>{{about.header}}</h2>
+                                        </div>
+                                    {% endfor%}
+                                {% endif %}
+                            {% endfor %}
                             <div class="paragraph">
-                                <p>Fresh Spring is a unique water solutions company composed of highly skilled professionals who deliver custom water treatment services tailored 
-                                    to individual client needs. Our solutions are not only affordable but are also built with sustainability and long-term value in mind</p>
-
+                                {% for service in page_sections %}
+                                    {% if service.slug == 'about' %}
+                                        {% with about=service.pagesectionabout.all.0 %}
+                                            <p>{{about.content}}</p>
+                                        {% endwith %}
+                                    {% endif %}
+                                {% endfor %}
                                 <div class="row g-0">
                                     <div class="col-lg-6 col-sm-6">
                                         <ul>
-                                            <li>
-                                                <img src="{% static 'freshspring_app/images/svg/star-color.svg' %}" alt="image">
-                                                Quality Assurance
-                                            </li>
-                                            <li>
-                                                <img src="{% static 'freshspring_app/images/svg/star-color.svg' %}" alt="image">
-                                                Eco-Friendly Approach
-                                            </li>
-                                            <li>
-                                                <img src="{% static 'freshspring_app/images/svg/star-color.svg' %}" alt="image">
-                                                Client Satisfaction
-                                            </li>
+                                            {% for list in col1 %}
+                                                <li>
+                                                    <img src="{% static 'freshspring_app/images/svg/star-color.svg' %}" alt="image">
+                                                    {{list.list_item}}
+                                                </li>
+                                            {% endfor %}
                                         </ul>
                                     </div>
                                     <div class="col-lg-6 col-sm-6">
                                         <ul>
-                                            <li>
-                                                <img src="{% static 'freshspring_app/images/svg/star-color.svg' %}" alt="image">
-                                                Modern Tools & Technology Use
-                                            </li>
-                                            <li>
-                                                <img src="{% static 'freshspring_app/images/svg/star-color.svg' %}" alt="image">
-                                                Experienced Team
-                                            </li>
-                                            <!--<li>
-                                                <img src="{% static 'freshspring_app/images/svg/star-color.svg' %}" alt="image">
-                                                24/7 Online Support
-                                            </li>-->
+                                            {% for list in col2 %}
+                                                <li>
+                                                    <img src="{% static 'freshspring_app/images/svg/star-color.svg' %}" alt="image">
+                                                    {{list.list_item}}
+                                                </li>
+                                            {% endfor %}
                                         </ul>
                                     </div>
                                 </div>
 
-                                <a href="about.html" class="default-btn more">Learn More<i class="flaticon-right-arrow-3"></i></a>
+                                <!--<a href="about.html" class="default-btn more">Learn More<i class="flaticon-right-arrow-3"></i></a>-->
                             </div>
                         </div>
                     </div>
@@ -246,48 +292,27 @@
         <div class="features-area bg-color-dceeff">
             <div class="container-fluid">
                 <div class="features-content">
-                    <ul>
-                        <li>
-                            <a href="{% url 'services' %}">Design</a>
-                            <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
-                        </li>
-                        <li>
-                            <a href="{% url 'services' %}">Construction and Installation</a>
-                            <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
-                        </li>
-                        <li>
-                            <a href="{% url 'services' %}">Consulting</a>
-                            <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
-                        </li>
-                        <li>
-                            <a href="{% url 'services' %}">Borehole</a>
-                            <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
-                        </li>
-                        <li>
-                            <a href="{% url 'services' %}">General supply</a>
-                            <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
-                        </li>
-                        <li>
-                            <a href="{% url 'services' %}">Design</a>
-                            <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
-                        </li>
-                        <li>
-                            <a href="{% url 'services' %}">Construction and Installation</a>
-                            <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
-                        </li>
-                        <li>
-                            <a href="{% url 'services' %}">Consulting</a>
-                            <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
-                        </li>
-                        <li>
-                            <a href="{% url 'services' %}">Borehole</a>
-                            <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
-                        </li>
-                        <li>
-                            <a href="{% url 'services' %}">General supply</a>
-                            <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
-                        </li>
-                        
+                    <ul>%
+                        {% for section in page_sections %}
+                            {% if section.slug == 'features' %}
+                                {% for feature in section.pagesectionfeatures.all %}
+                                    <li>
+                                        <a href="{% url 'services' %}">{{feature.item}}</a>
+                                        <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
+                                    </li>
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                        {% for section in page_sections %}
+                            {% if section.slug == 'features' %}
+                                {% for feature in section.pagesectionfeatures.all %}
+                                    <li>
+                                        <a href="{% url 'services' %}">{{feature.item}}</a>
+                                        <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
+                                    </li>
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
                         <!--<li>
                             <a href="service-details.html">Deep cleaning</a>
                             <img src="{% static 'freshspring_app/images/svg/xmlid.svg' %}" alt="image">
@@ -326,8 +351,14 @@
         <div class="service-area pt-100">
             <div class="container-fluid">
                 <div class="section-heading">
-                    <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">Service areas</span>
-                    <h2>Professional water treatment services we offer to our clients</h2>
+                    {% for section in page_sections %}
+                        {% if section.slug == 'services' %}
+                            {% for service in section.sections.all %}
+                                <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">{{service.icon_text}}</span>
+                                <h2>{{service.header}}</h2>
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="service-slider-item">
                     <div class="swiper swiperServiceSliderItem">
@@ -604,42 +635,74 @@
                     <div class="row align-items-center">
                         <div class="col-lg-8">
                             <div class="row">
-                                <div class="col-lg-3 col-sm-6 col-md-3">
-                                    <div class="count-card">
-                                        <div class="info d-flex align-items-center">
-                                            <h2 class="counter">9</h2>
-                                            <h2>+</h2>
-                                        </div>
-                                        <p>Years of Experience</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-sm-6 col-md-3">
-                                    <div class="count-card">
-                                        <div class="info d-flex align-items-center">
-                                            <h2 class="counter">100</h2>
-                                            <h2>+</h2>
-                                        </div>
-                                        <p>Satisfied Customer</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-sm-6 col-md-3">
-                                    <div class="count-card">
-                                        <div class="info d-flex align-items-center">
-                                            <h2 class="counter">10</h2>
-                                            <h2>+</h2>
-                                        </div>
-                                        <p>Years of Scientific Research</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-sm-6 col-md-3">
-                                    <div class="count-card">
-                                        <div class="info d-flex align-items-center">
-                                            <h2 class="counter">5</h2>
-                                            <h2>+</h2>
-                                        </div>
-                                        <p>Years of Worldwide Collaboration</p>
-                                    </div>
-                                </div>
+                                {% for section in page_sections %}
+                                    {% if section.slug == 'fun-fact' %}
+                                        {% for funfact in section.pagesectionfunfact.all %}
+                                            {% if funfact.position == 1 %}
+                                                <div class="col-lg-3 col-sm-6 col-md-3">
+                                                    <div class="count-card">
+                                                        <div class="info d-flex align-items-center">
+                                                            <h2 class="counter">{{funfact.years}}</h2>
+                                                            <h2>+</h2>
+                                                        </div>
+                                                        <p>{{funfact.paragraph}}</p>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% for section in page_sections %}
+                                    {% if section.slug == 'fun-fact' %}
+                                        {% for funfact in section.pagesectionfunfact.all %}
+                                            {% if funfact.position == 2 %}
+                                                <div class="col-lg-3 col-sm-6 col-md-3">
+                                                    <div class="count-card">
+                                                        <div class="info d-flex align-items-center">
+                                                            <h2 class="counter">{{funfact.years}}</h2>
+                                                            <h2>+</h2>
+                                                        </div>
+                                                        <p>{{funfact.paragraph}}</p>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% for section in page_sections %}
+                                    {% if section.slug == 'fun-fact' %}
+                                        {% for funfact in section.pagesectionfunfact.all %}
+                                            {% if funfact.position == 3 %}
+                                                <div class="col-lg-3 col-sm-6 col-md-3">
+                                                    <div class="count-card">
+                                                        <div class="info d-flex align-items-center">
+                                                            <h2 class="counter">{{funfact.years}}</h2>
+                                                            <h2>+</h2>
+                                                        </div>
+                                                        <p>{{funfact.paragraph}}</p>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% for section in page_sections %}
+                                    {% if section.slug == 'fun-fact' %}
+                                        {% for funfact in section.pagesectionfunfact.all %}
+                                            {% if funfact.position == 1 %}
+                                                <div class="col-lg-3 col-sm-6 col-md-3">
+                                                    <div class="count-card">
+                                                        <div class="info d-flex align-items-center">
+                                                            <h2 class="counter">{{funfact.years}}</h2>
+                                                            <h2>+</h2>
+                                                        </div>
+                                                        <p>{{funfact.paragraph}}</p>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
                             </div>
                         </div>
                         <div class="col-lg-4 col-sm-12">
@@ -660,25 +723,52 @@
                     <div class="col-lg-6">
                         <div class="why-choose-us-content">
                             <div class="section-heading">
-                                <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">Why Choose Us</span>
-                                <h2>Experienced team. Premium materials. Trusted results.</h2>
+                                {% for section in page_sections %}
+                                    {% if section.slug == 'why-choose-us' %}
+                                        {% for choose in section.sections.all %}
+                                            <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">{{choose.icon_text}}</span>
+                                            <h2>{{choose.header}}</h2>
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
                             </div>
-
                             <ul>
-                                <li>
-                                    <h3><i class='bx bx-check'></i>Expertise and Experience</h3>
-                                    <p>With a strong foundation in scientific research and industry best practices, we deliver reliable, data-driven water 
-                                        treatment solutions tailored to your needs.</p>
-                                </li>
-                                <li class="primary">
-                                    <h3><i class='bx bx-check'></i>Trusted Quality, Proven Materials</h3>
-                                    <p>We prioritize quality by using materials that meet global standards—because your water system deserves the best.</p>
-                                </li>
-                                <li class="warning">
-                                    <h3><i class='bx bx-check'></i>Cost-Effective Engineering</h3>
-                                    <p>We design sustainable water treatment systems optimized for long-term performance and minimal operational 
-                                        cost—delivering maximum value per liter treated.</p>
-                                </li>
+                                {% for section in page_sections %}
+                                    {% if section.slug == 'why-choose-us' %}
+                                        {% for value in section.pagesectionvalue.all %}
+                                            {% if value.position == '1' %}
+                                                <li>
+                                                    <h3><i class='bx bx-check'></i>{{value.title}}</h3>
+                                                    <p>{{value.content}}</p>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% for section in page_sections %}
+                                    {% if section.slug == 'why-choose-us' %}
+                                        {% for value in section.pagesectionvalue.all %}
+                                            {% if value.position == '2' %}
+                                                <li class="primary">
+                                                    <h3><i class='bx bx-check'></i>{{value.title}}</h3>
+                                                    <p>{{value.content}}</p>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% for section in page_sections %}
+                                    {% if section.slug == 'why-choose-us' %}
+                                        {% for value in section.pagesectionvalue.all %}
+                                            {% if value.position == '3' %}
+                                                <li class="warning">
+                                                    <h3><i class='bx bx-check'></i>{{value.title}}</h3>
+                                                    <p>{{value.content}}</p>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
                             </ul>
                             <img class="choose-shape-4" src="{% static 'freshspring_app/images/shape/choose-shape-4.png' %}" alt="image">
                         </div>
@@ -695,7 +785,7 @@
                                     <h4>Have a question?</h4>
                                     <div class="">
                                         <span>Call us now:</span>
-                                        <a href="tel:2347068473658">+234 (706) 847 3658</a>
+                                        <a href="tel:{{contact.phone}}">+{{formated_phone}}</a>
                                     </div>
                                 </div>
 
@@ -775,8 +865,14 @@
                         <div class="portfolio-content">
                             <div class="portfolio-top-heading d-flex align-items-center justify-content-between">
                                 <div class="section-heading">
-                                    <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">Our portfolio</span>
-                                    <h2>Keep an eye on our new projects regularly</h2>
+                                    {% for section in page_sections %}
+                                        {% if section.slug == 'portfolio' %}
+                                            {% for portfolio in section.sections.all %}
+                                                <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">{{portfolio.icon_text}}</span>
+                                                <h2>{{portfolio.header}}</h2>
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
                                 </div>
                                 <div class="view-btn">
                                     <a href="{% url 'portfolio' %}" class="learn-more">View All Projects<i class="flaticon-right-arrow-3"></i></a>
@@ -1090,8 +1186,14 @@
             <div class="container">
                 <div class="latest-heading d-flex align-items-center justify-content-between">
                     <div class="section-heading">
-                        <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">Latest news & articles</span>
-                        <h2>Stay updates with our every latest news & articles</h2>
+                        {% for section in page_sections %}
+                            {% if section.slug == 'blog' %}
+                                {% for blog in section.sections.all %}
+                                    <span class="sub-title"><img class="star" src="{% static 'freshspring_app/images/svg/star.svg' %}" alt="image">{{blog.icon_text}}</span>
+                                    <h2>{{blog.header}}</h2>
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
                     </div>
                     <div class="view-btn">
                         <a href="{% url 'blog' %}" class="learn-more">View All Articles<i class="flaticon-right-arrow-3"></i></a>
@@ -1102,7 +1204,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-card">
                             <div class="blog-image">
-                                <a href="blog-details.html" class="d-block">
+                                <a href="{% url 'blog_detail' blog.slug %}" class="d-block">
                                     {% if blog.image %}
                                     <img src="{{ blog.image.url }}" alt="image">
                                     {% endif %}
@@ -1115,9 +1217,9 @@
                                     <li><i class='bx bx-message-rounded'></i>({{blog.comments.count}} Comment)</li>
                                 </ul>
                                 <h3>
-                                    <a href="blog-details.html">{{blog.title}}</a>
+                                    <a href="{% url 'blog_detail' blog.slug %}">{{blog.title}}</a>
                                 </h3>
-                                <a href="blog-details.html" class="learn-more">Learn More <i class="flaticon-right-arrow-3"></i></a>
+                                <a href="{% url 'blog_detail' blog.slug %}" class="learn-more">Learn More <i class="flaticon-right-arrow-3"></i></a>
                             </div>
                         </div>
                     </div>

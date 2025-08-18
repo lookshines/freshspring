@@ -42,7 +42,7 @@
                             <h3>
                                 <a href="blog-details.html">{{ post.title }}</a>
                             </h3>
-                            <p>{{ post.content }}</p>
+                            <p>{{ post.content|safe }}</p>
                             <p></p>
 
                             <!--<div class="p-card">
@@ -67,22 +67,22 @@
                             <div class="share">
                                 <div class="row align-items-center">
                                     <div class="col-lg-7">
-                                        <ul class="share-tags">
+                                        <!--<ul class="share-tags">
                                             <li><p>Share:</p></li>
                                             <li><a href="#">Cleaning</a></li>
                                             <li><a href="#">Commercial Cleaning</a></li>
                                             <li><a href="#">Deep Cleaning</a></li>
-                                        </ul>
+                                        </ul>-->
                                     </div>
                                     <div class="col-lg-5">
                                         <ul class="footer-social">
                                             <li><p>Share Post:</p></li>
                                             <li>
-                                                <a href="https://www.facebook.com/" target="_blank">
+                                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" target="_blank">
                                                     <i class="flaticon-facebook-1"></i>
                                                 </a>
                                             </li>
-                                            <li>
+                                            <!--<li>
                                                 <a href="https://www.twitter.com/" target="_blank">
                                                     <i class="flaticon-twitter-1"></i>
                                                 </a>
@@ -96,7 +96,7 @@
                                                 <a href="https://www.instagram.com/" target="_blank">
                                                     <i class="flaticon-instagram"></i>
                                                 </a>
-                                            </li>
+                                            </li>-->
                                         </ul>
                                     </div>
                                 </div>
@@ -129,29 +129,26 @@
 
                     <div class="leave-reply">
                         <h3>Leave a reply</h3>
-                        <form class="question-form">
+                        <form class="question-form" method="POST">
+                            {% csrf_token %}
                             <p>Your email address will not be published. Required fields are marked *</p>
                             <div class="form-group">
                                 <i class='bx bx-user'></i>
-                                <input type="text" class="form-control" placeholder="Name">
+                                {{ form.name }}
                             </div>
                             <div class="form-group">
                                 <i class='bx bx-envelope'></i>
-                                <input type="text" class="form-control" placeholder="Email">
-                            </div>
-                            <div class="form-group">
-                                <i class='bx bx-globe'></i>
-                                <input type="text" class="form-control" placeholder="Website">
+                                {{ form.email }}
                             </div>
                             <div class="form-group textarea">
                                 <i class='bx bx-edit-alt'></i>
-                                <textarea class="form-control" placeholder="Write your message"></textarea>
+                                {{ form.message }}
                             </div>
 
-                            <div class="form-check">
+                            <!--<div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="flexCheckDefault" id="flexCheckDefault1">
                                 <label class="form-check-label" for="flexCheckDefault1">Save my name, email, and website in this browser for the next time I comment.</label>
-                            </div>
+                            </div>-->
 
                             <button type="submit" class="default-btn more">Post A Comment<i class="flaticon-right-arrow-3"></i></button>
                         </form>
