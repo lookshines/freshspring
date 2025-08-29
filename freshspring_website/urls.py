@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path("site-management-1004/", admin.site.urls),
     path('', include('freshspring_app.urls')),
     path('ckeditor5/', include('django_ckeditor_5.urls')),
     # Password reset request (user enters email)
