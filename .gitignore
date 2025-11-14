@@ -22,3 +22,6 @@ media/
 # macOS & Windows
 .DS_Store
 Thumbs.db
+
+# settings.py local config
+settings.py

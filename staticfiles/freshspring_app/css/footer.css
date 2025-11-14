@@ -81,8 +81,9 @@ Footer Area CSS
   color: var(--headingColor);
 }
 /*.footer-area .footer-weight .contact li.phone a {
-  font-weight: 700;*/
-}
+  font-weight: 700;
+}*/
+
 .footer-area .footer-weight .contact li:last-child {
   margin-bottom: 0;
 }
